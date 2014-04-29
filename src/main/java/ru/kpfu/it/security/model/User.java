@@ -38,6 +38,9 @@ public class User {
     @Transient
     private String confirmPassword;
 
+    @Column(name = "enabled")
+    private boolean enabled = true;
+
     @ManyToMany
     @JoinTable(name = "USER_UR",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
@@ -45,19 +48,6 @@ public class User {
     private List<UserRole> role;
 
     public User() {
-    }
-
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-    public User(long id, String username, String email, String password) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
     }
 
     public long getId() {
