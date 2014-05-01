@@ -29,11 +29,11 @@ public class Comment {
     private Date updatedAt;
 
     @OneToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "comm_author_id", referencedColumnName = "user_id")
     private User author;
 
     @OneToOne
-    @JoinColumn(name = "lec_id", referencedColumnName = "lec_id")
+    @JoinColumn(name = "comm_lec_id", referencedColumnName = "lec_id")
     private Lecture lecture;
 
     public Long getId() {

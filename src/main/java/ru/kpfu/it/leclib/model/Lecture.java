@@ -15,6 +15,7 @@ public class Lecture {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "lec_id")
     private Long id;
 
     @NotEmpty(message = "Заголовок не должен быть пустым")
@@ -38,15 +39,15 @@ public class Lecture {
     private int reviews;
 
     @ManyToOne
-    @JoinColumn(name = "lc_id", referencedColumnName = "lc_id")
+    @JoinColumn(name = "lec_lc_id", referencedColumnName = "lc_id")
     private LectureCategory category;
 
     @OneToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "lec_author_id", referencedColumnName = "user_id")
     private User author;
 
     @OneToOne
-    @JoinColumn(name = "univer_id", referencedColumnName = "univer_id")
+    @JoinColumn(name = "lec_univer_id", referencedColumnName = "univer_id")
     private University university;
 
     public Long getId() {
