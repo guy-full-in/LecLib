@@ -1,14 +1,12 @@
-package ru.kpfu.it.security.service;
+package ru.kpfu.it.leclib.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.kpfu.it.security.model.User;
-import ru.kpfu.it.security.model.UserRole;
-import ru.kpfu.it.security.utils.MD5;
+import ru.kpfu.it.leclib.model.User;
+import ru.kpfu.it.leclib.utils.MD5;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Ayrat on 29.04.2014.

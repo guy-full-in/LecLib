@@ -1,4 +1,4 @@
-package ru.kpfu.it.security.controller;
+package ru.kpfu.it.leclib.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -11,9 +11,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ru.kpfu.it.security.model.User;
-import ru.kpfu.it.security.model.UserRole;
-import ru.kpfu.it.security.service.UserService;
+import ru.kpfu.it.leclib.model.User;
+import ru.kpfu.it.leclib.model.UserRole;
+import ru.kpfu.it.leclib.service.UserService;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -53,6 +53,7 @@ public class RegistrationController {
             for(UserRole role : userRoles){
                 authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
             }
+            //end
 
             SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), authorities));
             return "redirect:/";

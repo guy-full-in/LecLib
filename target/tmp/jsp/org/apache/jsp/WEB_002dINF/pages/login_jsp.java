@@ -43,7 +43,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html; charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -55,9 +55,11 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("    <title>Login Page</title>\r\n");
+      out.write("    <meta charset=\"utf-8\">\r\n");
       out.write("    <style>\r\n");
       out.write("        .error {\r\n");
       out.write("            padding: 15px;\r\n");
@@ -91,9 +93,9 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </style>\r\n");
       out.write("</head>\r\n");
       out.write("<body onload='document.loginForm.username.focus();'>\r\n");
-      out.write("<h1>Spring Security Custom Login Form (XML)</h1>\r\n");
+      out.write("<h1 align=\"center\">Добро пожаловать на сайт LecLib</h1>\r\n");
       out.write("<div id=\"login-box\">\r\n");
-      out.write("    <h3>Login with Username and Password</h3>\r\n");
+      out.write("    <h3>Авторизация</h3>\r\n");
       out.write("    ");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
@@ -109,16 +111,17 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\" method='POST'>\r\n");
       out.write("        <table>\r\n");
       out.write("            <tr>\r\n");
-      out.write("                <td>User:</td>\r\n");
+      out.write("                <td>Логин:</td>\r\n");
       out.write("                <td><input type='text' name='username' value=''></td>\r\n");
       out.write("            </tr>\r\n");
       out.write("            <tr>\r\n");
-      out.write("                <td>Password:</td>\r\n");
+      out.write("                <td>Пароль:</td>\r\n");
       out.write("                <td><input type='password' name='password'/></td>\r\n");
       out.write("            </tr>\r\n");
       out.write("            <tr>\r\n");
-      out.write("                <td colspan='2'><input name=\"submit\" type=\"submit\"\r\n");
-      out.write("                                       value=\"submit\"/></td>\r\n");
+      out.write("                <td><a href=\"/registr\">Регистрация</a></td>\r\n");
+      out.write("                <td><input name=\"submit\" type=\"submit\"\r\n");
+      out.write("                                       value=\"Войти\"/></td>\r\n");
       out.write("            </tr>\r\n");
       out.write("        </table>\r\n");
       out.write("        <input type=\"hidden\" name=\"");

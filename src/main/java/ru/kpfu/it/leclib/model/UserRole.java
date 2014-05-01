@@ -1,7 +1,6 @@
-package ru.kpfu.it.security.model;
+package ru.kpfu.it.leclib.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by Ayrat on 23.04.2014.

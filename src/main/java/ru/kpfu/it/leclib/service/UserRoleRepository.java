@@ -1,7 +1,7 @@
-package ru.kpfu.it.security.service;
+package ru.kpfu.it.leclib.service;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.kpfu.it.security.model.UserRole;
+import ru.kpfu.it.leclib.model.UserRole;
 
 /**
  * Created by Ayrat on 29.04.2014.

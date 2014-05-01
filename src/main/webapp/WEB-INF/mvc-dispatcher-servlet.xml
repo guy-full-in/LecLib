@@ -7,9 +7,9 @@
 
     <mvc:annotation-driven />
     <context:annotation-config />
-    <context:component-scan base-package="ru.kpfu.it.security.controller"/>
-    <context:component-scan base-package="ru.kpfu.it.security.model"/>
-    <context:component-scan base-package="ru.kpfu.it.security.service"/>
+    <context:component-scan base-package="ru.kpfu.it.leclib.controller"/>
+    <context:component-scan base-package="ru.kpfu.it.leclib.model"/>
+    <context:component-scan base-package="ru.kpfu.it.leclib.service"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>

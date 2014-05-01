@@ -1,4 +1,4 @@
-package ru.kpfu.it.security.model;
+package ru.kpfu.it.leclib.model;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;

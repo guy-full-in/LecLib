@@ -1,4 +1,4 @@
-package ru.kpfu.it.security.utils;
+package ru.kpfu.it.leclib.utils;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

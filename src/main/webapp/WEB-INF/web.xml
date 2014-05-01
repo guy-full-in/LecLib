@@ -10,6 +10,7 @@
 
 <display-name>Archetype Created Web Application</display-name>
 
+
     <!-- Spring MVC -->
     <servlet>
         <servlet-name>mvc-dispatcher</servlet-name>

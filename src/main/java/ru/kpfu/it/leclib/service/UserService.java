@@ -1,6 +1,6 @@
-package ru.kpfu.it.security.service;
+package ru.kpfu.it.leclib.service;
 
-import ru.kpfu.it.security.model.User;
+import ru.kpfu.it.leclib.model.User;
 
 /**
  * Created by Ayrat on 29.04.2014.

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="security:war exploded">
-    <output-path>$PROJECT_DIR$/target/security-1.0-SNAPSHOT</output-path>
+    <output-path>$PROJECT_DIR$/target/leclib-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="security/web/Web" />
       <element id="directory" name="WEB-INF">
