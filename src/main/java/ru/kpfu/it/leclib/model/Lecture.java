@@ -18,14 +18,11 @@ public class Lecture {
     @Column(name = "lec_id")
     private Long id;
 
-    @NotEmpty(message = "Заголовок не должен быть пустым")
     @Size(min = 5, max = 100, message = "Длина заголовка должна быть от 5 до 100 символов")
     @Column(name = "lec_title")
     private String title;
 
-    @NotEmpty(message = "Лекция не должна быть пустой")
     @Size(min = 20, message = "Минимальный размер лекции 20 символов")
-    @Lob
     @Column(name = "lec_text")
     private String text;
 

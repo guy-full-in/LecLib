@@ -45,18 +45,10 @@ public class NewLectureController {
         model.addAttribute("lecture", new Lecture());
 
         Iterable<LectureCategory> categories = lectureCategoryRepository.findAll();
-        List<LectureCategory> categoryList = new ArrayList<>();
-        for(LectureCategory category : categories){
-            categoryList.add(category);
-        }
-        model.addAttribute("categories", categoryList);
+        model.addAttribute("categories", categories);
 
         Iterable<University> universities = universityRepository.findAll();
-        List<University> universityList = new ArrayList<>();
-        for(University university : universities){
-            universityList.add(university);
-        }
-        model.addAttribute("universities", universityList);
+        model.addAttribute("universities", universities);
 
         return "lecture/new";
     }
@@ -72,6 +64,10 @@ public class NewLectureController {
             return "redirect:/show";
         }
         model.addAttribute("lecture", lecture);
+        Iterable<LectureCategory> categories = lectureCategoryRepository.findAll();
+        model.addAttribute("categories", categories);
+        Iterable<University> universities = universityRepository.findAll();
+        model.addAttribute("universities", universities);
         return "lecture/new";
     }
 }

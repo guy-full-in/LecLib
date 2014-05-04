@@ -15,9 +15,16 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <h1>Title : ${title}</h1>
-    <h1>Message : ${message}</h1>
+    <h1>Лекции :
 
+
+    <ul>
+    <c:forEach items="${lectures}" var="lecture">
+        <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></li>
+    </c:forEach>
+    </ul>
+
+    <a href="/lecture/new">Добавить лекцию</a>
     <c:url value="/j_spring_security_logout" var="logoutUrl" />
     <form action="${logoutUrl}" method="post" id="logoutForm">
         <input type="hidden"
