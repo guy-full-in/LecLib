@@ -8,11 +8,11 @@
     <mvc:annotation-driven conversion-service="conversionService"/>
 
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" >
-        <property name="converters">
-            <list>
-                <bean id="StringToUniversityConverter" class="ru.kpfu.it.leclib.converters.StringToUniversity"/>
-                <bean id="StringToLectureCategory" class="ru.kpfu.it.leclib.converters.StringToLectureCategory"/>
-            </list>
+        <property name="formatters">
+            <set>
+                <bean id="StringToLectureCategory" class="ru.kpfu.it.leclib.formatter.StringToLectureCategory"/>
+                <bean id="StringToUniversityConverter" class="ru.kpfu.it.leclib.formatter.StringToUniversity"/>
+            </set>
         </property>
     </bean>
     <context:annotation-config />

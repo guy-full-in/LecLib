@@ -50,22 +50,13 @@
             <tr>
                 <td>Категория:</td>
                 <td>
-                    <form:select path="category">
-                        <c:forEach var="category" items="${categories}" >
-                            <form:option value="${category}" label="${category.key}"/>
-                        </c:forEach>
-                    </form:select>
+                    <form:select path="category" items="${categories}" itemValue="id" itemLabel="title"/>
                 </td>
             </tr>
             <tr>
                 <td>Университет:</td>
                 <td>
-                    <form:select path="university">
-                        <c:forEach var="university" items="${universities}" >
-                            <form:option value="${university.value}" label="${university.key}"/>
-                        </c:forEach>
-                    </form:select>
-
+                    <form:select path="university" items="${universities}" itemValue="id" itemLabel="shortTitle"/>
                 </td>
             </tr>
             <tr>

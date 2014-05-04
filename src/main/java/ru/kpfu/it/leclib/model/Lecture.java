@@ -24,7 +24,7 @@ public class Lecture {
     private String title;
 
     @NotEmpty(message = "Лекция не должна быть пустой")
-    @Size(min = 300, message = "Минимальный размер лекции 300 символов")
+    @Size(min = 20, message = "Минимальный размер лекции 20 символов")
     @Lob
     @Column(name = "lec_text")
     private String text;
@@ -120,6 +120,21 @@ public class Lecture {
 
     public void setUniversity(University university) {
         this.university = university;
+    }
+
+    @Override
+    public String toString() {
+        return "Lecture{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", reviews=" + reviews +
+                ", category=" + category +
+                ", author=" + author +
+                ", university=" + university +
+                '}';
     }
 
     //    @Override
