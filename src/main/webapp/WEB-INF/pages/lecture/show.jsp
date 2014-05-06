@@ -17,5 +17,6 @@ ${lecture.category.title} | ${lecture.university.fullTitle}<br/>
 Автор:  ${lecture.author.username} [${lecture.author.email}]<br/>
 Создано: ${lecture.createdAt}<br/>
 Изменено: ${lecture.updatedAt}<br/>
+Просмотров: ${lecture.reviews}
 </body>
 </html>

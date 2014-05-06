@@ -24,6 +24,8 @@ public class ShowLectureController {
     public String showLecture(@PathVariable Long id, Model model){
         if(lectureRepository.exists(id)){
             Lecture lecture = lectureRepository.findOne(id);
+            lecture.setReviews(lecture.getReviews()+1);
+            lectureRepository.save(lecture);
             model.addAttribute("lecture", lecture);
             return "/lecture/show";
         }

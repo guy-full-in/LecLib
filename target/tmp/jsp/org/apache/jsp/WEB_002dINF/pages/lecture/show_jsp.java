@@ -72,6 +72,9 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("Изменено: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.updatedAt}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("<br/>\r\n");
+      out.write("Просмотров: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.reviews}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

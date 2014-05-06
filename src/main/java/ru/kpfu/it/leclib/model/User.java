@@ -20,7 +20,6 @@ public class User {
     @Column(name = "user_id")
     private long id;
 
-    @NotEmpty(message = "Name does not be empty")
     @Size(min = 4, message = "Name min size: 4")
     @Column(name = "username")
     private String username;
@@ -30,7 +29,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @NotEmpty(message = "Password does not be empty")
     @Size(min = 6, message = "Password min size: 6")
     @Column(name = "password")
     private String password;
