@@ -44,13 +44,15 @@ public class User {
 
     @ManyToMany
     @JoinTable(name = "USER_UR",
-            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "user_role_id", referencedColumnName = "user_role_id")})
+            joinColumns = {@JoinColumn(name = "uur_user_id", referencedColumnName = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "uur_ur_id", referencedColumnName = "user_role_id")})
     private List<UserRole> role;
+
+    @ManyToMany(mappedBy = "readers")
+    private List<Lecture> availableLectures;
 
     public User() {
     }
-
 
     public long getId() {
         return id;
@@ -116,14 +118,28 @@ public class User {
         this.lectures = lectures;
     }
 
+    public List<Lecture> getAvailableLectures() {
+        return availableLectures;
+    }
+
+    public void setAvailableLectures(List<Lecture> availableLectures) {
+        this.availableLectures = availableLectures;
+    }
+
     @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id != user.id) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
     }
 }

@@ -17,6 +17,7 @@ import ru.kpfu.it.leclib.service.LectureCategoryRepository;
 import ru.kpfu.it.leclib.service.LectureRepository;
 import ru.kpfu.it.leclib.service.UniversityRepository;
 import ru.kpfu.it.leclib.service.UserRepository;
+import ru.kpfu.it.leclib.utils.Converter;
 
 import javax.validation.Valid;
 import java.util.*;
@@ -60,6 +61,7 @@ public class NewLectureController {
             lecture.setAuthor(author);
             lecture.setCreatedAt(new Date());
             lecture.setUpdatedAt(lecture.getCreatedAt());
+            lecture.setReaders(Converter.toList(userRepository.findAll()));
             lecture = lectureRepository.save(lecture);
             return "redirect:/lecture/" + lecture.getId();
         }

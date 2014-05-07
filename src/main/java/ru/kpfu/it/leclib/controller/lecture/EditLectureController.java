@@ -65,6 +65,7 @@ public class EditLectureController {
             lecture.setCreatedAt(oldLecture.getCreatedAt());
             lecture.setAuthor(oldLecture.getAuthor());
             lecture.setReviews(oldLecture.getReviews());
+            lecture.setReaders(oldLecture.getReaders());
             //end
 
             lecture.setUpdatedAt(new Date());

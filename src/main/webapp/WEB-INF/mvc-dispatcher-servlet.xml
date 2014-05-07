@@ -11,7 +11,8 @@
         <property name="formatters">
             <set>
                 <bean id="StringToLectureCategory" class="ru.kpfu.it.leclib.formatter.StringToLectureCategory"/>
-                <bean id="StringToUniversityConverter" class="ru.kpfu.it.leclib.formatter.StringToUniversity"/>
+                <bean id="StringToUniversity" class="ru.kpfu.it.leclib.formatter.StringToUniversity"/>
+                <bean id="StringToUser" class="ru.kpfu.it.leclib.formatter.StringToUser"/>
             </set>
         </property>
     </bean>

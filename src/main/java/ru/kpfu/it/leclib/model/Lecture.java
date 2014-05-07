@@ -49,6 +49,11 @@ public class Lecture {
     @OneToMany(mappedBy = "lecture", fetch=FetchType.EAGER)
     private List<Comment> comments;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(joinColumns = {@JoinColumn(name = "la_lec_id", referencedColumnName = "lec_id")},
+            inverseJoinColumns = {@JoinColumn(name = "la_user_id", referencedColumnName = "user_id")})
+    private List<User> readers;
+
     public Long getId() {
         return id;
     }
@@ -129,6 +134,14 @@ public class Lecture {
         this.comments = comments;
     }
 
+    public List<User> getReaders() {
+        return readers;
+    }
+
+    public void setReaders(List<User> readers) {
+        this.readers = readers;
+    }
+
     @Override
     public String toString() {
         return "Lecture{" +
@@ -141,28 +154,8 @@ public class Lecture {
                 ", category=" + category +
                 ", author=" + author +
                 ", university=" + university +
+                ", comments=" + comments +
+                ", readers=" + readers +
                 '}';
     }
-
-    //    @Override
-//    public void save() {
-//        createdAt();
-//        super.save();
-//    }
-//
-//    @Override
-//    public void update() {
-//        updatedAt();
-//        super.update();
-//    }
-//
-//    @PrePersist
-//    void createdAt() {
-//        this.createdAt = this.updatedAt = new Date();
-//    }
-//
-//    @PreUpdate
-//    void updatedAt() {
-//        this.updatedAt = new Date();
-//    }
 }

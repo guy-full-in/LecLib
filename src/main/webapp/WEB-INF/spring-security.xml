@@ -31,7 +31,7 @@
 
                                         authorities-by-username-query="
 		      select u.username, ur.authority from users u, user_role ur, user_ur uur
-		      where u.user_id = uur.user_id and ur.user_role_id = uur.user_role_id and u.username =?  "
+		      where u.user_id = uur.uur_user_id and ur.user_role_id = uur.uur_ur_id and u.username =?  "
                     />
         </security:authentication-provider>
     </security:authentication-manager>
