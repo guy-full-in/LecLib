@@ -39,6 +39,9 @@ public class User {
     @Column(name = "enabled")
     private boolean enabled = true;
 
+    @OneToMany(mappedBy = "author")
+    private List<Lecture> lectures;
+
     @ManyToMany
     @JoinTable(name = "USER_UR",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
@@ -95,6 +98,22 @@ public class User {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<Lecture> getLectures() {
+        return lectures;
+    }
+
+    public void setLectures(List<Lecture> lectures) {
+        this.lectures = lectures;
     }
 
     @Override

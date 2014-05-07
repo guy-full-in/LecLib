@@ -4,6 +4,7 @@ package ru.kpfu.it.leclib.model;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Ayrat on 01.05.2014.
@@ -37,13 +38,16 @@ public class Lecture {
     @JoinColumn(name = "lec_lc_id", referencedColumnName = "lc_id")
     private LectureCategory category;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "lec_author_id", referencedColumnName = "user_id")
     private User author;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "lec_univer_id", referencedColumnName = "univer_id")
     private University university;
+
+    @OneToMany(mappedBy = "lecture", fetch=FetchType.EAGER)
+    private List<Comment> comments;
 
     public Long getId() {
         return id;
@@ -115,6 +119,14 @@ public class Lecture {
 
     public void setUniversity(University university) {
         this.university = university;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override

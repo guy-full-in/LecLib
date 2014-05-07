@@ -1,4 +1,4 @@
-package ru.kpfu.it.leclib.controller;
+package ru.kpfu.it.leclib.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

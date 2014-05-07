@@ -19,12 +19,14 @@
 
 
     <ul>
-    <c:forEach items="${lectures}" var="lecture">
-        <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></li>
-    </c:forEach>
+        <c:forEach items="${lectures}" var="lecture">
+            <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a>  (<a href="/lecture/edit/<c:out value="${lecture.id}"/>">Изменить</a>|<a href="/lecture/delete/<c:out value="${lecture.id}"/>">Удалить</a>)</li>
+        </c:forEach>
     </ul>
 
     <a href="/lecture/new">Добавить лекцию</a>
+
+
     <c:url value="/j_spring_security_logout" var="logoutUrl" />
     <form action="${logoutUrl}" method="post" id="logoutForm">
         <input type="hidden"

@@ -11,27 +11,7 @@
 <html>
 <head>
     <title>Новая лекция</title>
-    <style>
-        .error {
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            color: #a94442;
-            background-color: #f2dede;
-            border-color: #ebccd1;
-        }
-
-        #create-box {
-            width: 400px;
-            padding: 20px;
-            margin: 100px auto;
-            background: #fff;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            border: 1px solid #000;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 <div id="create-box">

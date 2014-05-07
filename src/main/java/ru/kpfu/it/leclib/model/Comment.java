@@ -32,7 +32,7 @@ public class Comment {
     @JoinColumn(name = "comm_author_id", referencedColumnName = "user_id")
     private User author;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "comm_lec_id", referencedColumnName = "lec_id")
     private Lecture lecture;
 

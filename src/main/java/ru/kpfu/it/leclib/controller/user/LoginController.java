@@ -1,4 +1,4 @@
-package ru.kpfu.it.leclib.controller;
+package ru.kpfu.it.leclib.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

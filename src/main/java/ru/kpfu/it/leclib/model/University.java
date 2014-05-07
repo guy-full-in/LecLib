@@ -20,8 +20,7 @@ public class University {
     @Column(name = "univer_fulltitle")
     private String fullTitle;
 
-    @OneToMany
-    @JoinColumn(name = "univer_id", referencedColumnName = "univer_id")
+    @OneToMany(mappedBy = "university")
     private List<Lecture> lectures;
 
     public Long getId() {
