@@ -16,7 +16,7 @@
 
     <form:form commandName="lecture" method="post" action="/lecture/${lecture.id}/access">
         <form:hidden path="id"/>
-        <form:checkboxes path="readers" items="${users}" itemValue="id" itemLabel="username"/>
+        <form:checkboxes path="readers" items="${users}" itemValue="id" itemLabel="username"/><br/>
         <input type="submit"/>
     </form:form>
 

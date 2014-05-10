@@ -22,4 +22,17 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/lecture/*"/>
+            <bean class="ru.kpfu.it.leclib.interceptor.LectureAccess"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/lecture/**/access*"/>
+            <mvc:mapping path="/lecture/**/edit*"/>
+            <mvc:mapping path="/lecture/**/delete*"/>
+            <bean class="ru.kpfu.it.leclib.interceptor.LectureAuthorAccess"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

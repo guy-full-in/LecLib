@@ -111,7 +111,7 @@ public final class access_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("        ");
           if (_jspx_meth_form_checkboxes_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
-          out.write("\r\n");
+          out.write("<br/>\r\n");
           out.write("        <input type=\"submit\"/>\r\n");
           out.write("    ");
           int evalDoAfterBody = _jspx_th_form_form_0.doAfterBody();

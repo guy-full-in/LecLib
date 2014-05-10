@@ -22,7 +22,7 @@ public class EditCommentController {
     @Autowired
     CommentRepository commentRepository;
 
-    @RequestMapping(value = "lecture/{lecId}/comment/edit/{commId}", method = RequestMethod.GET)
+    @RequestMapping(value = "lecture/{lecId}/comment/{commId}/edit", method = RequestMethod.GET)
     public String getForm(@PathVariable Long lecId, @PathVariable Long commId, Model model){
         if(commentRepository.exists(commId)){
             Comment comment = commentRepository.findOne(commId);

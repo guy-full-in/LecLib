@@ -14,7 +14,7 @@
         <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
         <security:form-login
                 login-page="/login"
-                default-target-url="/show"
+                default-target-url="/"
                 authentication-failure-url="/login?error"
                 username-parameter="username"
                 password-parameter="password"/>

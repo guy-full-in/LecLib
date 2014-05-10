@@ -38,7 +38,7 @@ public class EditLectureController {
     @Autowired
     UserRepository userRepository;
 
-    @RequestMapping(value = "/lecture/edit/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/lecture/{id}/edit", method = RequestMethod.GET)
     public String getForm(@PathVariable Long id, Model model){
         if(lectureRepository.exists(id)) {
             Lecture lecture = lectureRepository.findOne(id);

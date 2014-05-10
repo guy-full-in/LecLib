@@ -18,7 +18,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "user_id")
-    private long id;
+    private Long id;
 
     @Size(min = 4, message = "Name min size: 4")
     @Column(name = "username")
@@ -48,17 +48,17 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "uur_ur_id", referencedColumnName = "user_role_id")})
     private List<UserRole> role;
 
-    @ManyToMany(mappedBy = "readers")
+    @ManyToMany(mappedBy = "readers", fetch = FetchType.EAGER)
     private List<Lecture> availableLectures;
 
     public User() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

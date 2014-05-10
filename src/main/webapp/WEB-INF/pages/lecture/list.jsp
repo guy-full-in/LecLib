@@ -20,7 +20,7 @@
 
     <ul>
         <c:forEach items="${lectures}" var="lecture">
-            <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a>  (<a href="/lecture/edit/<c:out value="${lecture.id}"/>">Изменить</a>|<a href="/lecture/delete/<c:out value="${lecture.id}"/>">Удалить</a>)</li>
+            <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a>  (<a href="/lecture/<c:out value="${lecture.id}"/>/edit">Изменить</a>|<a href="/lecture/<c:out value="${lecture.id}"/>/delete">Удалить</a>)</li>
         </c:forEach>
     </ul>
 

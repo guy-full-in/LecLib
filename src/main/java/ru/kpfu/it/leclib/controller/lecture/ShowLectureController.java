@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.kpfu.it.leclib.model.Comment;
 import ru.kpfu.it.leclib.model.Lecture;
-import ru.kpfu.it.leclib.service.CommentRepository;
 import ru.kpfu.it.leclib.service.LectureRepository;
 
 import java.util.List;
@@ -22,7 +21,6 @@ public class ShowLectureController {
     @Autowired
     LectureRepository lectureRepository;
 
-
     @RequestMapping(value = "/lecture/{id}", method = RequestMethod.GET)
     public String showLecture(@PathVariable Long id, Model model){
         if(lectureRepository.exists(id)){
@@ -30,7 +28,7 @@ public class ShowLectureController {
             lecture.setReviews(lecture.getReviews()+1);
             lectureRepository.save(lecture);
             model.addAttribute("lecture", lecture);
-            model.addAttribute("comments", lecture.getComments());
+            model.addAttribute("comments",  lecture.getComments());
             model.addAttribute("comment", new Comment());
 
             return "/lecture/show";

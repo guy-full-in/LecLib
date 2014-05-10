@@ -1,6 +1,8 @@
 package ru.kpfu.it.leclib.model;
 
 
+import org.hibernate.annotations.SortNatural;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -46,6 +48,7 @@ public class Lecture {
     @JoinColumn(name = "lec_univer_id", referencedColumnName = "univer_id")
     private University university;
 
+    @OrderBy("createdAt asc")
     @OneToMany(mappedBy = "lecture", fetch=FetchType.EAGER)
     private List<Comment> comments;
 

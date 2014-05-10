@@ -146,13 +146,13 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write('"');
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</a>  (<a href=\"/lecture/edit/");
+          out.write("</a>  (<a href=\"/lecture/");
           if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("\">Изменить</a>|<a href=\"/lecture/delete/");
+          out.write("/edit\">Изменить</a>|<a href=\"/lecture/");
           if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("\">Удалить</a>)</li>\r\n");
+          out.write("/delete\">Удалить</a>)</li>\r\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

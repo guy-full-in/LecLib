@@ -32,10 +32,10 @@ ${lecture.category.title} | ${lecture.university.fullTitle}<br/>
                 <tr>
                     <td>${comm.createdAt}</td>
                     <td style="text-align: right">
-                        <form method="post" action="/lecture/${lecture.id}/comment/delete/${comm.id}">
+                        <form method="post" action="/lecture/${lecture.id}/comment/${comm.id}/delete">
                             <input type="submit" value="Удалить">
                         </form>
-                        <a href="/lecture/${lecture.id}/comment/edit/${comm.id}">Изменить</a></td>
+                        <a href="/lecture/${lecture.id}/comment/${comm.id}/edit">Изменить</a></td>
                 </tr>
             </table>
         </div>

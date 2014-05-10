@@ -17,7 +17,7 @@ public class DeleteLectureController {
     @Autowired
     LectureRepository lectureRepository;
 
-    @RequestMapping(value = "lecture/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "lecture/{id}/delete", method = RequestMethod.GET)
     public String delete(@PathVariable Long id, Model model){
         if(lectureRepository.exists(id)){
             lectureRepository.delete(id);

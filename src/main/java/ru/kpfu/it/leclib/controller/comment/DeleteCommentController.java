@@ -17,7 +17,7 @@ public class DeleteCommentController {
     @Autowired
     CommentRepository commentRepository;
 
-    @RequestMapping(value = "lecture/{lecId}/comment/delete/{commId}", method = RequestMethod.POST)
+    @RequestMapping(value = "lecture/{lecId}/comment/{commId}/delete", method = RequestMethod.POST)
     public String delete(@PathVariable Long lecId, @PathVariable Long commId, Model model){
         commentRepository.delete(commId);
         return "redirect:/lecture/"+lecId;
