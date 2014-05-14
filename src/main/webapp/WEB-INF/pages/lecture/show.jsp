@@ -31,11 +31,14 @@ ${lecture.category.title} | ${lecture.university.fullTitle}<br/>
             <table style="border-spacing: 0; width: 100%">
                 <tr>
                     <td>${comm.createdAt}</td>
-                    <td style="text-align: right">
-                        <form method="post" action="/lecture/${lecture.id}/comment/${comm.id}/delete">
-                            <input type="submit" value="Удалить">
-                        </form>
-                        <a href="/lecture/${lecture.id}/comment/${comm.id}/edit">Изменить</a></td>
+                    <c:if test="${pageContext.request.userPrincipal.name == comm.author.username}">
+                        <td style="text-align: right">
+                            <form method="post" action="/lecture/${lecture.id}/comment/${comm.id}/delete">
+                                <input type="submit" value="Удалить">
+                            </form>
+                            <a href="/lecture/${lecture.id}/comment/${comm.id}/edit">Изменить</a>
+                        </td>
+                    </c:if>
                 </tr>
             </table>
         </div>

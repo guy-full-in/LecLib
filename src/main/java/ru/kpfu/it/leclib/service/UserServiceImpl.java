@@ -35,4 +35,12 @@ public class UserServiceImpl implements UserService{
         user.setPassword(hash);
         return userRepository.save(user);
     }
+
+    @Transactional
+    public boolean exists(String username) {
+        if(userRepository.findByUsername(username) != null){
+            return true;
+        }
+        return false;
+    }
 }

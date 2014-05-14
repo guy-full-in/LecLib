@@ -14,6 +14,7 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_textarea_path_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_form_method_commandName_action;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_errors_path_element_cssClass_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -26,6 +27,7 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_form_textarea_path_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_form_method_commandName_action = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_errors_path_element_cssClass_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
@@ -33,6 +35,7 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_form_textarea_path_nobody.release();
     _jspx_tagPool_c_forEach_var_items.release();
     _jspx_tagPool_form_form_method_commandName_action.release();
+    _jspx_tagPool_c_if_test.release();
     _jspx_tagPool_form_errors_path_element_cssClass_nobody.release();
   }
 
@@ -208,19 +211,10 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                    <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${comm.createdAt}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                    <td style=\"text-align: right\">\r\n");
-          out.write("                        <form method=\"post\" action=\"/lecture/");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/comment/");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${comm.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/delete\">\r\n");
-          out.write("                            <input type=\"submit\" value=\"Удалить\">\r\n");
-          out.write("                        </form>\r\n");
-          out.write("                        <a href=\"/lecture/");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/comment/");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${comm.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/edit\">Изменить</a></td>\r\n");
+          out.write("                    ");
+          if (_jspx_meth_c_if_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\r\n");
           out.write("                </tr>\r\n");
           out.write("            </table>\r\n");
           out.write("        </div>\r\n");
@@ -241,6 +235,47 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.userPrincipal.name == comm.author.username}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                        <td style=\"text-align: right\">\r\n");
+        out.write("                            <form method=\"post\" action=\"/lecture/");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("/comment/");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${comm.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("/delete\">\r\n");
+        out.write("                                <input type=\"submit\" value=\"Удалить\">\r\n");
+        out.write("                            </form>\r\n");
+        out.write("                            <a href=\"/lecture/");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("/comment/");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${comm.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("/edit\">Изменить</a>\r\n");
+        out.write("                        </td>\r\n");
+        out.write("                    ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
     return false;
   }
 

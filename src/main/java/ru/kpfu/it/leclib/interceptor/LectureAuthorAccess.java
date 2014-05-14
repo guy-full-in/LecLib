@@ -35,7 +35,7 @@ public class LectureAuthorAccess extends HandlerInterceptorAdapter {
         if (lecture.getAuthor().getId().equals(user.getId())) {
             return super.preHandle(request, response, handler);
         }
-        response.sendRedirect("/lecture/"+lecId);
+        response.sendError(HttpServletResponse.SC_FORBIDDEN);
         return false;
     }
 }

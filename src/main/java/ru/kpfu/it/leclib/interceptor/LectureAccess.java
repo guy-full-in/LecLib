@@ -37,7 +37,7 @@ public class LectureAccess extends HandlerInterceptorAdapter {
                 return super.preHandle(request, response, handler);
             }
         }
-        response.sendRedirect("/lecture");
+        response.sendError(HttpServletResponse.SC_FORBIDDEN);
         return false;
     }
 }

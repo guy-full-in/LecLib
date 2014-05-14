@@ -39,11 +39,18 @@ public class RegistrationController {
     public String registr(@Valid User user,
                                BindingResult result,
                                Model model){
+        if(userService.exists(user.getUsername())){
+            result.addError(new ObjectError("username", "Это имя уже используется"));
+            model.addAttribute("user", user);
+            return "register";
+        }
+
         if(!user.getPassword().equals(user.getConfirmPassword())){
-            result.addError(new ObjectError("confirmPassword", "Password not confirm"));
+            result.addError(new ObjectError("confirmPassword", "Пароли не совпадают"));
             model.addAttribute("user", user);
             return "registr";
         }
+
         if (!result.hasErrors()) {
             userService.saveAsUser(user);
 

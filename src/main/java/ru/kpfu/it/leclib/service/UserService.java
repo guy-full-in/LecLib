@@ -8,4 +8,5 @@ import ru.kpfu.it.leclib.model.User;
 public interface UserService {
     User saveAsUser(User user);
     User saveAsAdmin(User user);
+    boolean exists(String username);
 }
