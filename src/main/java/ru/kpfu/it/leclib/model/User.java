@@ -133,13 +133,13 @@ public class User {
 
         User user = (User) o;
 
-        if (id != user.id) return false;
+        if (!username.equals(user.username)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return (int) (id ^ (id >>> 32));
+        return username.hashCode();
     }
 }

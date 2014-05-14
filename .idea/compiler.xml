@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="security" />
+        <module name="leclib" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="security" target="1.7" />
+      <module name="leclib" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,8 +1,6 @@
 package ru.kpfu.it.leclib.model;
 
 
-import org.hibernate.annotations.SortNatural;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/security.iml" filepath="$PROJECT_DIR$/security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leclib.iml" filepath="$PROJECT_DIR$/leclib.iml" />
     </modules>
   </component>
 </project>

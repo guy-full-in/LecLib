@@ -22,14 +22,14 @@ public class EditCommentController {
     @Autowired
     CommentRepository commentRepository;
 
-    @RequestMapping(value = "lecture/{lecId}/comment/{commId}/edit", method = RequestMethod.GET)
-    public String getForm(@PathVariable Long lecId, @PathVariable Long commId, Model model){
+    @RequestMapping(value = "lecture/{id}/comment/{commId}/edit", method = RequestMethod.GET)
+    public String getForm(@PathVariable Long id, @PathVariable Long commId, Model model){
         if(commentRepository.exists(commId)){
             Comment comment = commentRepository.findOne(commId);
             model.addAttribute("comment", comment);
             return "comment/edit";
         }
-        return "redirect:/lecture/"+lecId;
+        return "redirect:/lecture/"+id;
     }
 
     @RequestMapping(value = "comment/edit", method = RequestMethod.POST)
