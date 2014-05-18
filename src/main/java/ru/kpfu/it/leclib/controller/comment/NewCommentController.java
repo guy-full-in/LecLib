@@ -47,7 +47,6 @@ public class NewCommentController {
             return "redirect:/lecture/"+id;
         }
 
-        //TODO stub
         Lecture lecture = lectureRepository.findOne(id);
         lecture.setReviews(lecture.getReviews()+1);
         lectureRepository.save(lecture);

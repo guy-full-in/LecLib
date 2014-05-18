@@ -1,6 +1,7 @@
 package ru.kpfu.it.leclib.controller.lecture;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.kpfu.it.leclib.model.Comment;
 import ru.kpfu.it.leclib.model.Lecture;
+import ru.kpfu.it.leclib.model.User;
 import ru.kpfu.it.leclib.service.LectureRepository;
+import ru.kpfu.it.leclib.service.UserRepository;
 
 import java.util.List;
 
@@ -20,6 +23,9 @@ public class ShowLectureController {
 
     @Autowired
     LectureRepository lectureRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @RequestMapping(value = "/lecture/{id}", method = RequestMethod.GET)
     public String showLecture(@PathVariable Long id, Model model){
@@ -33,13 +39,16 @@ public class ShowLectureController {
 
             return "/lecture/show";
         }
-        return "redirect:/show";
+        return "redirect:/";
     }
 
-    @RequestMapping(value = {"lecture","/lecture/show", "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String showAll(Model model){
-        Iterable<Lecture> lectures = lectureRepository.findAll();
-        model.addAttribute("lectures", lectures);
+        User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        List<Lecture> myLectures = user.getLectures();
+        model.addAttribute("myLectures", myLectures);
+        List<Lecture> otherLectures = user.getAvailableLectures();
+        model.addAttribute("otherLectures", otherLectures);
         return "lecture/list";
     }
 }

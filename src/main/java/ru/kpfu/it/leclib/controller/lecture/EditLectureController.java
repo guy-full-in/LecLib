@@ -52,25 +52,22 @@ public class EditLectureController {
 
             return "lecture/edit";
         }
-        return "redirect:/show";
+        return "redirect:/";
     }
 
 
-    @RequestMapping(value = "lecture/edit", method = RequestMethod.POST)
-    public String update(@Valid Lecture lecture, BindingResult result, Model model){
+    @RequestMapping(value = "lecture/{id}/edit", method = RequestMethod.POST)
+    public String update(@Valid Lecture lecture, BindingResult result, @PathVariable Long id, Model model){
         if(!result.hasErrors()){
+            Lecture dbLecture = lectureRepository.findOne(id);
+            dbLecture.setTitle(lecture.getTitle());
+            dbLecture.setText(lecture.getText());
+            dbLecture.setCategory(lecture.getCategory());
+            dbLecture.setUniversity(lecture.getUniversity());
+            dbLecture.setUpdatedAt(new Date());
 
-            //TODO: Stub
-            Lecture oldLecture = lectureRepository.findOne(lecture.getId());
-            lecture.setCreatedAt(oldLecture.getCreatedAt());
-            lecture.setAuthor(oldLecture.getAuthor());
-            lecture.setReviews(oldLecture.getReviews());
-            lecture.setReaders(oldLecture.getReaders());
-            //end
-
-            lecture.setUpdatedAt(new Date());
-            lecture = lectureRepository.save(lecture);
-            return "redirect:/lecture/" + lecture.getId();
+            lectureRepository.save(dbLecture);
+            return "redirect:/lecture/" + id;
         }
         model.addAttribute("lecture", lecture);
         Iterable<LectureCategory> categories = lectureCategoryRepository.findAll();

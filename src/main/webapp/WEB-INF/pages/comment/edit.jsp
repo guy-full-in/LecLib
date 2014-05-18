@@ -12,7 +12,7 @@
     <title>Редактирование поста</title>
 </head>
 <body>
-    <form:form commandName="comment" method="post" action="/comment/edit">
+    <form:form commandName="comment" method="post" action="/lecture/${comment.lecture.id}/comment/${comment.id}/edit">
         <form:hidden path="id"/>
         <form:errors path="*" cssClass="error" element="div" />
         <label>Текст:</label><br>

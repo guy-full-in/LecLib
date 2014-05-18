@@ -16,6 +16,7 @@
             </set>
         </property>
     </bean>
+
     <context:annotation-config />
     <context:component-scan base-package="ru.kpfu.it.leclib.*"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -25,14 +26,20 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/lecture/*"/>
+            <mvc:mapping path="/lecture/**"/>
+            <mvc:exclude-mapping path="/lecture/new"/>
             <bean class="ru.kpfu.it.leclib.interceptor.LectureAccess"/>
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/lecture/**/access*"/>
-            <mvc:mapping path="/lecture/**/edit*"/>
-            <mvc:mapping path="/lecture/**/delete*"/>
+            <mvc:mapping path="/lecture/*/access"/>
+            <mvc:mapping path="/lecture/*/edit"/>
+            <mvc:mapping path="/lecture/*/delete"/>
             <bean class="ru.kpfu.it.leclib.interceptor.LectureAuthorAccess"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/lecture/*/comment/*/edit"/>
+            <mvc:mapping path="/lecture/*/comment/*/delete"/>
+            <bean class="ru.kpfu.it.leclib.interceptor.CommentAccess"/>
         </mvc:interceptor>
     </mvc:interceptors>
 </beans>

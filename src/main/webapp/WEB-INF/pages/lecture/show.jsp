@@ -12,6 +12,7 @@
 <head>
     <title>${lecture.title}</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
 <h1>${lecture.title}</h1>
@@ -51,5 +52,30 @@ ${lecture.category.title} | ${lecture.university.fullTitle}<br/>
     <form:textarea path="text"/><br>
     <input type="submit"/>
 </form:form>
+
+
+<%--<div>--%>
+    <%--<div id="comments">--%>
+
+    <%--</div>--%>
+<%--</div>--%>
+
+<%--<script>--%>
+    <%--/*<![CDATA[*/--%>
+    <%--$(function(){--%>
+        <%--var url =/*[["|/lecture/${lecture.id}/comments|"]]*/ "/lecture/${lecture.id}/comments";--%>
+        <%--$.get(url, function(comments){--%>
+            <%--comments.forEach(function(comment){--%>
+                <%--var html = '<div><span>';--%>
+                <%--html += comment.author.username;--%>
+                <%--html += ':</span><br /><span>';--%>
+                <%--html += comment.text;--%>
+                <%--html +='</span></div>';--%>
+                <%--$('#comments').append(html);--%>
+            <%--});--%>
+        <%--})--%>
+    <%--});--%>
+    <%--/*}}>*/--%>
+<%--</script>--%>
 </body>
 </html>

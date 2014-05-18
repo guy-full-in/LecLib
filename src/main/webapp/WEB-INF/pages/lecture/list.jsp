@@ -7,6 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page session="true"%>
 
 <html>
@@ -15,14 +16,37 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <h1>Лекции :
+    <h2>Мои лекции :</h2>
 
+    <c:if test="${empty myLectures}">
+        У вас нет написанных лекций
+    </c:if>
 
     <ul>
-        <c:forEach items="${lectures}" var="lecture">
-            <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a>  (<a href="/lecture/<c:out value="${lecture.id}"/>/edit">Изменить</a>|<a href="/lecture/<c:out value="${lecture.id}"/>/delete">Удалить</a>)</li>
+        <c:forEach items="${myLectures}" var="lecture">
+            <li>
+                <a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a>
+                <a href="/lecture/<c:out value="${lecture.id}"/>/edit">Изменить</a>
+                <form action="/lecture/<c:out value="${lecture.id}"/>/delete" method="post">
+                    <input type="submit" value="Удалить"></form>
+                </form>
+            </li>
         </c:forEach>
     </ul>
+
+    <h2>Доступные лекции:</h2>
+
+    <c:if test="${empty otherLectures}">
+        У вас нет доступных лекций
+    </c:if>
+
+    <ul>
+        <c:forEach items="${otherLectures}" var="lecture">
+            <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></li>
+        </c:forEach>
+    </ul>
+
+
 
     <a href="/lecture/new">Добавить лекцию</a>
 

@@ -39,7 +39,7 @@ public class User {
     @Column(name = "enabled")
     private boolean enabled = true;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
     private List<Lecture> lectures;
 
     @ManyToMany

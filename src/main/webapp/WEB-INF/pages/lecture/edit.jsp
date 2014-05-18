@@ -16,9 +16,8 @@
 <body>
 <div id="create-box">
     <h3>Редактирование лекции</h3>
-    <form:form commandName="lecture" method="post" action="/lecture/edit">
+    <form:form commandName="lecture" method="post" action="/lecture/${lecture.id}/edit">
         <form:errors path="*" cssClass="error" element="div" />
-        <form:hidden path="id"/>
         <table>
             <tr>
                 <td>Название:</td>

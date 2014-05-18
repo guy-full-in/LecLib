@@ -13,13 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = "/admin**", method = RequestMethod.GET)
-    public String adminPage(Model model) {
-        model.addAttribute("title", "Spring Security Hello World");
-        model.addAttribute("message", "This is protected page!");
-        return "admin";
-    }
-
     @RequestMapping(value = "/login**", method = RequestMethod.GET)
     public String login(Model model,
                         @RequestParam(value = "error", required = false) String error,

@@ -25,17 +25,17 @@ public class LectureAccess extends HandlerInterceptorAdapter {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    LectureRepository lectureRepository;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Map<String, String> pathVariables = (Map<String, String>) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
         Long lecId = Long.parseLong(pathVariables.get("id"));
         User user = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
-        List<Lecture> lectures = user.getAvailableLectures();
-        Iterator<Lecture> it = lectures.iterator();
-        while (it.hasNext()){
-            if(it.next().getId().equals(lecId)){
-                return super.preHandle(request, response, handler);
-            }
+        Lecture lecture = lectureRepository.findOne(lecId);
+        if(lecture.getReaders().contains(user) || lecture.getAuthor().equals(user)){
+            return super.preHandle(request, response, handler);
         }
         response.sendError(HttpServletResponse.SC_FORBIDDEN);
         return false;

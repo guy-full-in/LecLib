@@ -1,5 +1,7 @@
 package ru.kpfu.it.leclib.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -33,6 +35,7 @@ public class Comment {
     private User author;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "comm_lec_id", referencedColumnName = "lec_id")
     private Lecture lecture;
 

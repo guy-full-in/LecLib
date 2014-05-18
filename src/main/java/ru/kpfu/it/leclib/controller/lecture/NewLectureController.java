@@ -61,7 +61,9 @@ public class NewLectureController {
             lecture.setAuthor(author);
             lecture.setCreatedAt(new Date());
             lecture.setUpdatedAt(lecture.getCreatedAt());
-            lecture.setReaders(Converter.toList(userRepository.findAll()));
+            List<User> readers = Converter.toList(userRepository.findAll());
+            readers.remove(author);
+            lecture.setReaders(readers);
             lecture = lectureRepository.save(lecture);
             return "redirect:/lecture/" + lecture.getId();
         }
