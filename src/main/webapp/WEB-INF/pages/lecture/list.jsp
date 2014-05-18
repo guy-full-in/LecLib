@@ -51,6 +51,7 @@
     <a href="/lecture/new">Добавить лекцию</a>
 
 
+
     <c:url value="/j_spring_security_logout" var="logoutUrl" />
     <form action="${logoutUrl}" method="post" id="logoutForm">
         <input type="hidden"
@@ -65,9 +66,14 @@
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">
         <h2>
-            Welcome : ${pageContext.request.userPrincipal.name} | <a
-                href="javascript:formSubmit()"> Logout</a>
+            Вы зашли как : ${pageContext.request.userPrincipal.name} | <a
+                href="javascript:formSubmit()"> Выход </a>
         </h2>
     </c:if>
+
+    <form action="/lecture/search" method="get">
+        <input name="title" type="text">
+        <input type="submit" value="Поиск">
+    </form>
 </body>
 </html>

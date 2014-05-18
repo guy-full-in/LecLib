@@ -28,6 +28,7 @@
         <mvc:interceptor>
             <mvc:mapping path="/lecture/**"/>
             <mvc:exclude-mapping path="/lecture/new"/>
+            <mvc:exclude-mapping path="/lecture/search"/>
             <bean class="ru.kpfu.it.leclib.interceptor.LectureAccess"/>
         </mvc:interceptor>
         <mvc:interceptor>

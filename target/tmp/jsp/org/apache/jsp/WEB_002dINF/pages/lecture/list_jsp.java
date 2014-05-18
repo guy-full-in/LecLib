@@ -105,6 +105,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <a href=\"/lecture/new\">Добавить лекцию</a>\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("    ");
       if (_jspx_meth_c_url_0(_jspx_page_context))
         return;
@@ -130,6 +131,11 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_if_2(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("    <form action=\"/lecture/search\" method=\"get\">\r\n");
+      out.write("        <input name=\"title\" type=\"text\">\r\n");
+      out.write("        <input type=\"submit\" value=\"Поиск\">\r\n");
+      out.write("    </form>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
@@ -404,10 +410,10 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       do {
         out.write("\r\n");
         out.write("        <h2>\r\n");
-        out.write("            Welcome : ");
+        out.write("            Вы зашли как : ");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.userPrincipal.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write(" | <a\r\n");
-        out.write("                href=\"javascript:formSubmit()\"> Logout</a>\r\n");
+        out.write("                href=\"javascript:formSubmit()\"> Выход </a>\r\n");
         out.write("        </h2>\r\n");
         out.write("    ");
         int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
