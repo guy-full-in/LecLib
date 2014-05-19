@@ -24,8 +24,9 @@ public class Lecture {
     @Column(name = "lec_title")
     private String title;
 
+    @Lob
     @Size(min = 20, message = "Минимальный размер лекции 20 символов")
-    @Column(name = "lec_text")
+    @Column(name = "lec_text", columnDefinition = "TEXT")
     private String text;
 
     @Column(name = "lec_created_at")

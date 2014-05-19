@@ -49,7 +49,7 @@
         <form action="/lecture/search" method="get" lass="navbar-form navbar-left" role="search">
             <div class="form-group">
                 <div class="col-xs-3">
-                    <input name="title" type="text" class="form-control" placeholder="Поиск лекции...">
+                    <input name="title" type="text" class="form-control" placeholder="Поиск лекции по заголовку...">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Поиск</button>
@@ -82,10 +82,6 @@
                         <td>${lecture.category.title}</td>
                         <td>${lecture.university.shortTitle}</td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
-                            <%--                    <a href="/lecture/<c:out value="${lecture.id}"/>/edit">Изменить</a>
-                                                <form action="/lecture/<c:out value="${lecture.id}"/>/delete" method="post">
-                                                    <input type="submit" value="Удалить"></form>
-                                                </form>--%>
                     </tr>
                 </c:forEach>
                 </tbody>

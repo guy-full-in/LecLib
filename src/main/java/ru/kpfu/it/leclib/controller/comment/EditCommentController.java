@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import ru.kpfu.it.leclib.model.Comment;
 import ru.kpfu.it.leclib.service.CommentRepository;
 
@@ -24,26 +25,23 @@ public class EditCommentController {
     CommentRepository commentRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getForm(@PathVariable Long id, @PathVariable Long commId, Model model){
+    public @ResponseBody Comment getForm(@PathVariable Long id, @PathVariable Long commId, Model model){
         if(commentRepository.exists(commId)){
             Comment comment = commentRepository.findOne(commId);
-            model.addAttribute("comment", comment);
-            return "comment/edit";
+            return comment;
         }
-        return "redirect:/lecture/"+id;
+        return null;
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String update(@PathVariable Long id, @PathVariable Long commId,@Valid Comment comment, BindingResult result, Model model){
+    public @ResponseBody String update(@PathVariable Long id, @PathVariable Long commId,@Valid Comment comment, BindingResult result){
         if(!result.hasErrors()){
             Comment dbComment = commentRepository.findOne(commId);
             dbComment.setText(comment.getText());
             dbComment.setUpdatedAt(new Date());
             commentRepository.save(dbComment);
-            return "redirect:/lecture/"+id;
+            return "ok";
         }
-        comment.setLecture(commentRepository.findOne(commId).getLecture());
-        model.addAttribute("comment", comment);
-        return "comment/edit";
+        return "error";
     }
 }

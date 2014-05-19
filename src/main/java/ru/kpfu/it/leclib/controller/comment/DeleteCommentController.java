@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import ru.kpfu.it.leclib.service.CommentRepository;
 
 /**
@@ -18,9 +19,9 @@ public class DeleteCommentController {
     CommentRepository commentRepository;
 
     @RequestMapping(value = "lecture/{id}/comment/{commId}/delete", method = RequestMethod.POST)
-    public String delete(@PathVariable Long id, @PathVariable Long commId, Model model){
+    public @ResponseBody String delete(@PathVariable Long id, @PathVariable Long commId){
         commentRepository.delete(commId);
-        return "redirect:/lecture/"+id;
+        return "ok";
     }
 
 }

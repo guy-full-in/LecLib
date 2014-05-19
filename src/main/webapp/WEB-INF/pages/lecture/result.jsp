@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: Ayrat
@@ -10,12 +11,88 @@
 <html>
 <head>
     <title>Результаты поиска</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <ul>
-        <c:forEach var="lecture" items="${lectures}">
-            <li><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></li>
-        </c:forEach>
-    </ul>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <div style="margin-top: 5px">
+            <a class="navbar-brand" href="/">LecLib</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li>
+                <button type="button" class="btn btn-link navbar-btn" onclick="javascript:history.back()">Вернуться
+                    назад
+                </button>
+            </li>
+        </ul>
+
+        <c:url value="/j_spring_security_logout" var="logoutUrl"/>
+        <form action="${logoutUrl}" method="post" id="logoutForm">
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
+        </form>
+
+        <script>
+            function formSubmit() {
+                document.getElementById("logoutForm").submit();
+            }
+        </script>
+
+        <div class="navbar-right">
+               <span style="font-size: 18px; padding-right: 10px">
+                Добро пожаловать, ${pageContext.request.userPrincipal.name}!
+               </span>
+            <button class="btn btn-default" type="submit" onclick="javascript:formSubmit()">Выход</button>
+        </div>
+
+        <form action="/lecture/search" method="get" lass="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <input name="title" type="text" class="form-control" placeholder="Поиск лекции...">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Поиск</button>
+        </form>
+    </div>
+</nav>
+<div class="contentDiv">
+    <h3>Результаты поиска:</h3>
+
+    <c:choose>
+        <c:when test="${empty lectures}">
+            По данному запросу ничего не найдено.
+        </c:when>
+        <c:otherwise>
+            <table class="table table-striped">
+                <thead class="table-header-group">
+                <tr>
+                    <td>Название</td>
+                    <td>Автор</td>
+                    <td>Категория</td>
+                    <td>Университет</td>
+                    <td>Дата последнего изменения</td>
+                </tr>
+                </thead>
+                <tbody class="table-row-group">
+                <c:forEach items="${lectures}" var="lecture">
+                    <tr>
+                        <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
+                        <td>${lecture.author.username}</td>
+                        <td>${lecture.category.title}</td>
+                        <td>${lecture.university.shortTitle}</td>
+                        <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </c:otherwise>
+    </c:choose>
+</div>
 </body>
 </html>

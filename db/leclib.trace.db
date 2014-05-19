@@ -1,0 +1,4 @@
+05-19 22:14:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Значение слишком длинное для поля "LEC_TEXT VARCHAR(255)": "STRINGDECODE('\u0424\u0430\u043a\u0442\u043e\u0440 \u0432\u043b\u0438\u044f\u044e\u0449\u0438\u0439 \u043d\u0430 \u0440\u0430\u0... (787)"
+Value too long for column "LEC_TEXT VARCHAR(255)": "STRINGDECODE('\u0424\u0430\u043a\u0442\u043e\u0440 \u0432\u043b\u0438\u044f\u044e\u0449\u0438\u0439 \u043d\u0430 \u0440\u0430\u0... (787)"; SQL statement:
+insert into Lecture (lec_author_id, lec_lc_id, lec_created_at, lec_reviews, lec_text, lec_title, lec_univer_id, lec_updated_at, lec_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-175]

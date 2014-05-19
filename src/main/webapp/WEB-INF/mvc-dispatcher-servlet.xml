@@ -9,6 +9,8 @@
 
     <mvc:resources mapping="/css/**" location="/resources/bootstrap/css/" />
 
+    <mvc:resources mapping="/js/**" location="/resources/bootstrap/js/" />
+
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" >
         <property name="formatters">
             <set>

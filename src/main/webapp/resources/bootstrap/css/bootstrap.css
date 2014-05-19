@@ -4447,7 +4447,7 @@ a.thumbnail.active {
 .alert-dismissable {
   padding-right: 35px;
 }
-.alert-dismissable .close {
+.alert-dismissable .delete {
   position: relative;
   top: -2px;
   right: -21px;
@@ -5056,7 +5056,7 @@ a.list-group-item-danger.active:focus {
   padding: 9px;
   border-radius: 3px;
 }
-.close {
+.delete {
   float: right;
   font-size: 21px;
   font-weight: bold;
@@ -5066,15 +5066,15 @@ a.list-group-item-danger.active:focus {
   filter: alpha(opacity=20);
   opacity: .2;
 }
-.close:hover,
-.close:focus {
+.delete:hover,
+.delete:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
   filter: alpha(opacity=50);
   opacity: .5;
 }
-button.close {
+button.delete {
   -webkit-appearance: none;
   padding: 0;
   cursor: pointer;
@@ -5149,7 +5149,7 @@ button.close {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
 }
-.modal-header .close {
+.modal-header .delete {
   margin-top: -2px;
 }
 .modal-title {
