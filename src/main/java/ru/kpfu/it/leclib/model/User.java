@@ -1,8 +1,8 @@
 package ru.kpfu.it.leclib.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -29,25 +29,31 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @JsonIgnore
     @Size(min = 6, message = "Password min size: 6")
     @Column(name = "password")
     private String password;
 
+    @JsonIgnore
     @Transient
     private String confirmPassword;
 
+    @JsonIgnore
     @Column(name = "enabled")
     private boolean enabled = true;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
     private List<Lecture> lectures;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "USER_UR",
             joinColumns = {@JoinColumn(name = "uur_user_id", referencedColumnName = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "uur_ur_id", referencedColumnName = "user_role_id")})
     private List<UserRole> role;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "readers", fetch = FetchType.EAGER)
     private List<Lecture> availableLectures;
 

@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import ru.kpfu.it.leclib.controller.lecture.ShowLectureController;
 import ru.kpfu.it.leclib.model.Comment;
 import ru.kpfu.it.leclib.model.Lecture;
@@ -16,6 +17,7 @@ import ru.kpfu.it.leclib.service.CommentRepository;
 import ru.kpfu.it.leclib.service.LectureRepository;
 import ru.kpfu.it.leclib.service.UserRepository;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Date;
 
@@ -23,7 +25,7 @@ import java.util.Date;
  * Created by Ayrat on 06.05.2014.
  */
 @Controller
-@RequestMapping("lecture/{id}/comment/new")
+@RequestMapping("lecture/{id}/comments/new")
 public class NewCommentController {
 
     @Autowired
@@ -36,7 +38,7 @@ public class NewCommentController {
     LectureRepository lectureRepository;
 
     @RequestMapping(method = RequestMethod.POST)
-    public String create(@PathVariable Long id, @Valid Comment comment, BindingResult result, Model model){
+    public @ResponseBody String create(@PathVariable Long id, @Valid Comment comment, BindingResult result){
         if(!result.hasErrors()){
             User author = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
             comment.setAuthor(author);
@@ -44,15 +46,9 @@ public class NewCommentController {
             comment.setCreatedAt(new Date());
             comment.setUpdatedAt(comment.getCreatedAt());
             commentRepository.save(comment);
-            return "redirect:/lecture/"+id;
+            return "ok";
         }
-
-        Lecture lecture = lectureRepository.findOne(id);
-        lecture.setReviews(lecture.getReviews()+1);
-        lectureRepository.save(lecture);
-        model.addAttribute("lecture", lecture);
-        model.addAttribute("comments", lecture.getComments());
-
-        return "lecture/show";
+        return "Error: not valid comment";
     }
+
 }

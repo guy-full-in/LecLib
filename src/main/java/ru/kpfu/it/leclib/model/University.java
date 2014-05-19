@@ -1,5 +1,8 @@
 package ru.kpfu.it.leclib.model;
 
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,6 +23,7 @@ public class University {
     @Column(name = "univer_fulltitle")
     private String fullTitle;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "university")
     private List<Lecture> lectures;
 

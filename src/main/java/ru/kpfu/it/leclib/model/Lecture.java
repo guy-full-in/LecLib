@@ -1,6 +1,9 @@
 package ru.kpfu.it.leclib.model;
 
 
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -46,10 +49,12 @@ public class Lecture {
     @JoinColumn(name = "lec_univer_id", referencedColumnName = "univer_id")
     private University university;
 
+    @JsonIgnore
     @OrderBy("createdAt asc")
     @OneToMany(mappedBy = "lecture", fetch=FetchType.EAGER)
     private List<Comment> comments;
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(joinColumns = {@JoinColumn(name = "la_lec_id", referencedColumnName = "lec_id")},
             inverseJoinColumns = {@JoinColumn(name = "la_user_id", referencedColumnName = "user_id")})

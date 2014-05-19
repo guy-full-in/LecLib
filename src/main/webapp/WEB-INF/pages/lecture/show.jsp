@@ -96,58 +96,98 @@
 
     <br/><br/>
 
-    <c:forEach var="comm" items="${comments}">
-        <div style="border: 1px solid #000; width: 300px; margin-top: 5px; padding-left: 10px">
-            <p>${comm.author.username}:<br>
-                    ${comm.text}</p>
-            <table style="border-spacing: 0; width: 100%">
-                <tr>
-                    <td>${comm.createdAt}</td>
-                    <c:if test="${pageContext.request.userPrincipal.name == comm.author.username}">
-                        <td style="text-align: right">
-                            <form method="post" action="/lecture/${lecture.id}/comment/${comm.id}/delete">
-                                <input type="submit" value="Удалить">
-                            </form>
-                            <a href="/lecture/${lecture.id}/comment/${comm.id}/edit">Изменить</a>
-                        </td>
-                    </c:if>
-                </tr>
-            </table>
-        </div>
-    </c:forEach>
-    <br>
 
-    <form:form commandName="comment" method="post" action="/lecture/${lecture.id}/comment/new">
-        <form:errors path="*" cssClass="error" element="div"/>
-        <label>Текст:</label><br>
-        <form:textarea path="text"/><br>
-        <input type="submit"/>
-    </form:form>
+    <%--<c:forEach var="comm" items="${comments}">--%>
+        <%--<div style="border: 1px solid #000; width: 300px; margin-top: 5px; padding-left: 10px">--%>
+            <%--<p>${comm.author.username}:<br>--%>
+                    <%--${comm.text}</p>--%>
+            <%--<table style="border-spacing: 0; width: 100%">--%>
+                <%--<tr>--%>
+                    <%--<td>${comm.createdAt}</td>--%>
+                    <%--<c:if test="${pageContext.request.userPrincipal.name == comm.author.username}">--%>
+                        <%--<td style="text-align: right">--%>
+                            <%--<form method="post" action="/lecture/${lecture.id}/comment/${comm.id}/delete">--%>
+                                <%--<input type="submit" value="Удалить">--%>
+                            <%--</form>--%>
+                            <%--<a href="/lecture/${lecture.id}/comment/${comm.id}/edit">Изменить</a>--%>
+                        <%--</td>--%>
+                    <%--</c:if>--%>
+                <%--</tr>--%>
+            <%--</table>--%>
+        <%--</div>--%>
+    <%--</c:forEach>--%>
+    <%--<br>--%>
+
+    <%--<form:form commandName="comment" method="post" action="/lecture/${lecture.id}/comment/new">--%>
+        <%--<form:errors path="*" cssClass="error" element="div"/>--%>
+        <%--<label>Текст:</label><br>--%>
+        <%--<form:textarea path="text"/><br>--%>
+        <%--<input type="submit"/>--%>
+    <%--</form:form>--%>
 
 </div>
 
-<%--<div>--%>
-<%--<div id="comments">--%>
+<hr />
 
-<%--</div>--%>
-<%--</div>--%>
+<div id="comments">
 
-<%--<script>--%>
-<%--/*<![CDATA[*/--%>
-<%--$(function(){--%>
-<%--var url =/*[["|/lecture/${lecture.id}/comments|"]]*/ "/lecture/${lecture.id}/comments";--%>
-<%--$.get(url, function(comments){--%>
-<%--comments.forEach(function(comment){--%>
-<%--var html = '<div><span>';--%>
-<%--html += comment.author.username;--%>
-<%--html += ':</span><br /><span>';--%>
-<%--html += comment.text;--%>
-<%--html +='</span></div>';--%>
-<%--$('#comments').append(html);--%>
-<%--});--%>
-<%--})--%>
-<%--});--%>
-<%--/*}}>*/--%>
-<%--</script>--%>
+</div>
+
+<hr/>
+
+<div>
+    <strong>Новый комментарий:</strong><br/>
+    <div>
+        <div id="errors"></div>
+        <label for="text">Comment:</label>
+        <input id="text"/>
+        <button onclick="addComment();">Написать</button>
+    </div>
+</div>
+
+<script>
+/*<![CDATA[*/
+    function loadComments() {
+        var url = "/lecture/";
+        url += ${lecture.id};
+        url += "/comments";
+        $.get(url, function (comments) {
+            $('#comments').html('');
+            comments.forEach(function (comment) {
+                var html = '<div style="border: 1px solid #000; width: 300px; margin-top: 5px; padding-left: 10px" ><span>';
+                html += comment.author.username;
+                html += ':</span><br /><span>';
+                html += comment.text;
+                html += '</span></div>';
+                $('#comments').append(html);
+            });
+        })
+    }
+
+    function addComment() {
+        $('#errors').html('')
+        var txt = $('input#text').val();
+        if(txt.length < 10){
+            var html = '<div class="error">';
+            html += 'Минимальный размер комментария 10 символов';
+            html +='</div>';
+            $('#errors').html(html);
+        }else{
+            var url = "/lecture/";
+            url += ${lecture.id};
+            url += "/comments/new";
+            $.post(url, {'text': txt}, function(){
+                $('input#text').val("");
+                loadComments();
+            });
+        }
+    }
+
+
+
+    $(loadComments());
+
+/*]]>*/
+</script>
 </body>
 </html>

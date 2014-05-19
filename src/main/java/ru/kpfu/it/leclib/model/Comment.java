@@ -1,5 +1,6 @@
 package ru.kpfu.it.leclib.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -34,6 +35,7 @@ public class Comment {
     @JoinColumn(name = "comm_author_id", referencedColumnName = "user_id")
     private User author;
 
+    @JsonIgnore
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "comm_lec_id", referencedColumnName = "lec_id")

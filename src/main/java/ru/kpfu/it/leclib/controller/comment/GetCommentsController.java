@@ -25,10 +25,11 @@ public class GetCommentsController {
     LectureRepository lectureRepository;
 
     @RequestMapping(value = "/lecture/{id}/comments", method = RequestMethod.GET)
-    public @ResponseBody List<Comment> getComments(@PathVariable Long id, Model model){
-        if (lectureRepository.exists(id)){
-            return lectureRepository.findOne(id).getComments();
+    public @ResponseBody List<Comment> getComments(@PathVariable Long id){
+        Lecture lecture = lectureRepository.findOne(id);
+        if (lecture == null){
+            return Collections.EMPTY_LIST;
         }
-        return Collections.emptyList();
+        return lecture.getComments();
     }
 }
