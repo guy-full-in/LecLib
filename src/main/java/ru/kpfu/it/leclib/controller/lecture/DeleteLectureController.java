@@ -22,7 +22,7 @@ public class DeleteLectureController {
         if(lectureRepository.exists(id)){
             lectureRepository.delete(id);
         }
-        return "redirect:/lecture/show";
+        return "redirect:/";
     }
 
 }

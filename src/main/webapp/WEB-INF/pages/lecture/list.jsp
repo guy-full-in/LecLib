@@ -15,6 +15,7 @@
 <head>
     <title>Мои лекции</title>
     <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -58,7 +59,7 @@
 </nav>
 
 
-<div style="padding-left: 20px">
+<div id="lectures" style="padding-left: 20px">
     <h2>Мои лекции :</h2>
 
     <c:choose>
@@ -79,8 +80,12 @@
                 <c:forEach items="${myLectures}" var="lecture">
                     <tr>
                         <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
-                        <td>${lecture.category.title}</td>
-                        <td>${lecture.university.shortTitle}</td>
+                        <td><a href="#"
+                               onclick="loadByCategory('${lecture.category.title}');"> ${lecture.category.title}</a>
+                        </td>
+                        <td><a href="#"
+                               onclick="loadByUniversity('${lecture.university.shortTitle}')"> ${lecture.university.shortTitle} </a>
+                        </td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
                     </tr>
                 </c:forEach>
@@ -113,8 +118,12 @@
                     <tr>
                         <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
                         <td>${lecture.author.username}</td>
-                        <td>${lecture.category.title}</td>
-                        <td>${lecture.university.shortTitle}</td>
+                        <td><a href="#"
+                               onclick="loadByCategory('${lecture.category.title}');"> ${lecture.category.title}</a>
+                        </td>
+                        <td><a href="#"
+                               onclick="loadByUniversity('${lecture.university.shortTitle}')"> ${lecture.university.shortTitle} </a>
+                        </td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
                     </tr>
                 </c:forEach>
@@ -124,5 +133,38 @@
     </c:choose>
 
 </div>
+
+
+<script>
+
+
+    function loadByCategory(category) {
+        var url = "/lecture?byCategory=" + category;
+        loadLectures(category, url)
+    }
+
+    function loadByUniversity(university) {
+        var url = "/lecture?byUniversity=" + university;
+        loadLectures(university, url)
+    }
+
+    function loadLectures(filter, url) {
+        $.get(url, function (lectures) {
+            $('#lectures').html('');
+            if (lectures.length == 0) {
+                $('#lectures').append('Нет лекций, доступных Вам, по этому фильтру');
+            } else {
+                var html = '<h2>' + filter + ':</h2>' + '<table class="table table-striped"><thead class="table-header-group"><tr><td>Название</td><td>Автор</td><td>Категория</td><td>Университет</td><td>Дата последнего изменения</td></tr></thead><tbody class="table-row-group">';
+                lectures.forEach(function (lecture) {
+                    var createdAt = lecture.createdAt;
+                    html += '<tr><td><a href= "lecture/' + lecture.id + '">' + lecture.title + '</a></td><td>' + lecture.author.username + '</td><td><a href="#" onclick="loadByCategory(\'' + lecture.category.title+ '\');">' + lecture.category.title+ '</a></td><td><a href="#"onclick="loadByUniversity(\'' + lecture.university.shortTitle + '\')">' + lecture.university.shortTitle + ' </a></td><td>' + createdAt + '</td></tr>';
+                });
+                html += '</tbody></table>';
+                $('#lectures').append(html);
+            }
+        });
+    }
+</script>
+
 </body>
 </html>

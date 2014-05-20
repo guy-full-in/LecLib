@@ -112,7 +112,7 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${deleteUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" method=\"post\" id=\"editForm\"></form>\r\n");
+      out.write("\" method=\"post\" id=\"deleteForm\"></form>\r\n");
       out.write("\r\n");
       out.write("        <script>\r\n");
       out.write("            function formSubmit() {\r\n");

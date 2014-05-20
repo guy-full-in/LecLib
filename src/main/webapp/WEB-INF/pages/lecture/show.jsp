@@ -50,7 +50,7 @@
         </form>
 
         <c:url value="/lecture/${lecture.id}/delete" var="deleteUrl"/>
-        <form action="${deleteUrl}" method="post" id="editForm"></form>
+        <form action="${deleteUrl}" method="post" id="deleteForm"></form>
 
         <script>
             function formSubmit() {

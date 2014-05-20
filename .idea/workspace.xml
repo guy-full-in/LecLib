@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f80afd0-4153-4551-8ac5-2c27081201d0" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Ayrat\Desktop\LecLib\db\leclib.lock.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Ayrat\Desktop\LecLib\src\main\webapp\WEB-INF\pages\comment\edit.jsp" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Ayrat\Desktop\LecLib\src\main\webapp\WEB-INF\pages\welcome.jsp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/FilterLectureController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/leclib.h2.db" afterPath="$PROJECT_DIR$/db/leclib.h2.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/DeleteCommentController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/DeleteCommentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/EditCommentController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/EditCommentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/model/Lecture.java" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/model/Lecture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/access.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/access.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/DeleteLectureController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/DeleteLectureController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/LectureRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/LectureRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/edit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/edit.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/list.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/new.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/new.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/result.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/result.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/show.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/show.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestSecurity.iws" />
@@ -54,8 +44,8 @@
       <file leaf-file-name="list.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7984032" vertical-offset="950" max-vertical-offset="3350">
-              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+            <state vertical-scroll-proportion="4.3157897" vertical-offset="1925" max-vertical-offset="4400">
+              <caret line="159" column="187" selection-start-line="159" selection-start-column="187" selection-end-line="159" selection-end-column="187" />
               <folding />
             </state>
           </provider>
@@ -64,19 +54,21 @@
       <file leaf-file-name="show.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/show.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.882353" vertical-offset="0" max-vertical-offset="4625">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state vertical-scroll-proportion="-14.911765" vertical-offset="2943" max-vertical-offset="4625">
+              <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="access.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/access.jsp">
+      <file leaf-file-name="FilterLectureController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/FilterLectureController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.764706" vertical-offset="75" max-vertical-offset="2100">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="58" selection-end-column="6" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1400">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,48 +76,8 @@
       <file leaf-file-name="result.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/result.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.529411" vertical-offset="349" max-vertical-offset="2600">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/edit.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.058824" vertical-offset="374" max-vertical-offset="2600">
-              <caret line="30" column="13" selection-start-line="24" selection-start-column="8" selection-end-line="30" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/new.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.352941" vertical-offset="1650" max-vertical-offset="2625">
-              <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="17.6" vertical-offset="715" max-vertical-offset="1375">
-              <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2327" max-vertical-offset="2875">
-              <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+            <state vertical-scroll-proportion="-9.588235" vertical-offset="1949" max-vertical-offset="2600">
+              <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="92" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -144,8 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/NewLectureController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/EditLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/ShowLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/DeleteLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/style.css" />
@@ -164,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/comment/show.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/interceptor/LectureAuthorAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/EditLectureAccessController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/DeleteLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/user/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/comment/edit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/interceptor/CommentAccess.java" />
@@ -173,7 +122,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/LectureAccessController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/ShowLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/EditLectureController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/LectureRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/SearchLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/GetCommentsController.java" />
@@ -186,14 +134,18 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/model/Lecture.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/DeleteCommentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/EditCommentController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/access.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/show.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/new.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/edit.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/result.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/FilterByCategory.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/LectureRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/edit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/show.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/DeleteLectureController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/FilterLectureController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/list.jsp" />
       </list>
     </option>
@@ -292,6 +244,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -572,7 +526,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leclib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LecLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leclib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leclib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LecLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leclib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interceptor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -676,8 +690,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1013,16 +1025,18 @@
       <workItem from="1400477544020" duration="157000" />
       <workItem from="1400478710297" duration="189000" />
       <workItem from="1400478973803" duration="745000" />
-      <workItem from="1400514725868" duration="20785000" />
+      <workItem from="1400514725868" duration="21878000" />
+      <workItem from="1400598674978" duration="308000" />
+      <workItem from="1400604590730" duration="9877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193255000" />
+    <option name="totallyTimeSpent" value="204533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1046,8 +1060,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1546875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2671875" sideWeight="0.4991453" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33295324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2671875" sideWeight="0.4991453" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36259976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1165,26 +1179,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/DeleteLectureController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="700">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/LectureRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1197,14 +1195,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="499">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css">
@@ -1222,14 +1219,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="467">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registr.jsp">
@@ -1243,15 +1239,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="2200">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="43" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/SearchLectureController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="850">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="850">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,7 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="875">
           <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,9 +1260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1275">
           <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1337,7 +1319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="634" max-vertical-offset="1150">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,19 +1338,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/DeleteCommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="650">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/interceptor/CommentAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="850">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1397,14 +1369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="17.6" vertical-offset="715" max-vertical-offset="1375">
-          <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.89345795" vertical-offset="11247" max-vertical-offset="15250">
@@ -1417,16 +1381,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.0" vertical-offset="225" max-vertical-offset="1175">
           <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <marker date="1400532737994" expanded="true" signature="-1:-1" placeholder="select usern..users..." />
-            <marker date="1400532737994" expanded="true" signature="-1:-1" placeholder="select u.use..users..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/access.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.764706" vertical-offset="75" max-vertical-offset="2100">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="2100">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="58" selection-end-column="6" />
           <folding />
         </state>
@@ -1442,40 +1403,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/new.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.352941" vertical-offset="1650" max-vertical-offset="2625">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="2625">
           <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/SearchLectureController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="850">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="37" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0" vertical-offset="725" max-vertical-offset="1375">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.058824" vertical-offset="374" max-vertical-offset="2600">
-          <caret line="30" column="13" selection-start-line="24" selection-start-column="8" selection-end-line="30" selection-end-column="13" />
+        <state vertical-scroll-proportion="-8.411765" vertical-offset="2014" max-vertical-offset="2600">
+          <caret line="92" column="66" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/comment/DeleteCommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="650">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/service/LectureRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
+          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/DeleteLectureController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="700">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/kpfu/it/leclib/controller/lecture/FilterLectureController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1400">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/result.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.529411" vertical-offset="349" max-vertical-offset="2600">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state vertical-scroll-proportion="-9.588235" vertical-offset="1949" max-vertical-offset="2600">
+          <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="92" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap/js/date.format.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.682243" vertical-offset="900" max-vertical-offset="3300">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/show.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.882353" vertical-offset="0" max-vertical-offset="4625">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state vertical-scroll-proportion="-14.911765" vertical-offset="2943" max-vertical-offset="4625">
+          <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/lecture/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7984032" vertical-offset="950" max-vertical-offset="3350">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+        <state vertical-scroll-proportion="4.3157897" vertical-offset="1925" max-vertical-offset="4400">
+          <caret line="159" column="187" selection-start-line="159" selection-start-column="187" selection-end-line="159" selection-end-column="187" />
           <folding />
         </state>
       </provider>

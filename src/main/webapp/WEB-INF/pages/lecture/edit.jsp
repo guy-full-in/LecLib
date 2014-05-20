@@ -38,7 +38,7 @@
         </form>
 
         <c:url value="/lecture/${lecture.id}/delete" var="deleteUrl"/>
-        <form action="${deleteUrl}" method="post" id="editForm"></form>
+        <form action="${deleteUrl}" method="post" id="deleteForm"></form>
 
         <script>
             function formSubmit() {
@@ -58,7 +58,7 @@
 <div class="contentDiv">
     <h3>Редактирование лекции</h3>
     <div class="lecForm">
-        <form:form cssClass="form-horizontal" commandName="lecture" method="post" action="/lecture/new">
+        <form:form cssClass="form-horizontal" commandName="lecture" method="post" action="/lecture/${lecture.id}/edit">
             <form:errors path="*" cssClass="error" element="div"/>
             <div class="form-group">
                 <label class="col-sm-1 control-label" for="title">Название:</label>
@@ -90,7 +90,7 @@
                                  itemValue="id" itemLabel="shortTitle"/>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Создать</button>
+            <button type="submit" class="btn btn-primary">Изменить</button>
         </form:form>
     </div>
 </div>
