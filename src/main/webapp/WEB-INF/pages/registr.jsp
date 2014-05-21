@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Registration Page</title>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -66,9 +66,6 @@
                     <button type="submit" class="btn btn-success">Регистрация</button>
                 </div>
             </div>
-            <input type="hidden" name="${_csrf.parameterName}"
-                   value="${_csrf.token}"/>
-
         </form:form>
     </div>
 </div>

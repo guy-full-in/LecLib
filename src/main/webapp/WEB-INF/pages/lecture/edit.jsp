@@ -7,10 +7,11 @@
   Time: 11:16
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Редактирование лекции</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -32,9 +33,6 @@
 
         <c:url value="/j_spring_security_logout" var="logoutUrl"/>
         <form action="${logoutUrl}" method="post" id="logoutForm">
-            <input type="hidden"
-                   name="${_csrf.parameterName}"
-                   value="${_csrf.token}"/>
         </form>
 
         <c:url value="/lecture/${lecture.id}/delete" var="deleteUrl"/>

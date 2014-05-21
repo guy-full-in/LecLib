@@ -53,15 +53,11 @@ public class RegistrationController {
 
         if (!result.hasErrors()) {
             userService.saveAsUser(user);
-
-            //нужно как-то это зарефакторить
             List<UserRole> userRoles = user.getRole();
             List<GrantedAuthority> authorities = new ArrayList<>();
             for(UserRole role : userRoles){
                 authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
             }
-            //end
-
             SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), authorities));
             return "redirect:/";
         } else {

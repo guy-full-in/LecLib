@@ -7,10 +7,11 @@
   Time: 15:34
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Результаты поиска</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -35,9 +36,6 @@
 
         <c:url value="/j_spring_security_logout" var="logoutUrl"/>
         <form action="${logoutUrl}" method="post" id="logoutForm">
-            <input type="hidden"
-                   name="${_csrf.parameterName}"
-                   value="${_csrf.token}"/>
         </form>
 
         <script>
@@ -52,15 +50,6 @@
                </span>
             <button class="btn btn-default" type="submit" onclick="javascript:formSubmit()">Выход</button>
         </div>
-
-        <form action="/lecture/search" method="get" lass="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <div class="col-xs-3">
-                    <input name="title" type="text" class="form-control" placeholder="Поиск лекции...">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Поиск</button>
-        </form>
     </div>
 </nav>
 <div class="contentDiv">

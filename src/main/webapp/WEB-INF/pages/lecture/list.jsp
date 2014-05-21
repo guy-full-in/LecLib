@@ -5,7 +5,7 @@
   Time: 11:39
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -14,7 +14,7 @@
 <html>
 <head>
     <title>Мои лекции</title>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -30,9 +30,6 @@
 
         <c:url value="/j_spring_security_logout" var="logoutUrl"/>
         <form action="${logoutUrl}" method="post" id="logoutForm">
-            <input type="hidden"
-                   name="${_csrf.parameterName}"
-                   value="${_csrf.token}"/>
         </form>
 
         <script>
@@ -80,10 +77,10 @@
                 <tbody class="table-row-group">
                 <c:forEach items="${myLectures}" var="lecture">
                     <tr>
-                        <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
-                        <td><a href="/category/${lecture.category.id}"> ${lecture.category.title}</a>
+                        <td><a href="/lecture/${lecture.id}/>">${lecture.title}</a></td>
+                        <td><a href="/category/${lecture.category.id}" title="${lecture.category.title}"> ${lecture.category.title}</a>
                         </td>
-                        <td><a href="/university/${lecture.university.id}"> ${lecture.university.shortTitle} </a>
+                        <td><a href="/university/${lecture.university.id}" title="${lecture.university.fullTitle}"> ${lecture.university.shortTitle} </a>
                         </td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
                     </tr>
@@ -117,9 +114,9 @@
                     <tr>
                         <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
                         <td>${lecture.author.username}</td>
-                        <td><a href="/category/${lecture.category.id}"> ${lecture.category.title}</a>
+                        <td><a href="/category/${lecture.category.id}" title="${lecture.category.title}"> ${lecture.category.title}</a>
                         </td>
-                        <td><a href="/university/${lecture.university.id}"> ${lecture.university.shortTitle} </a>
+                        <td><a href="/university/${lecture.university.id}" title="${lecture.university.fullTitle}"> ${lecture.university.shortTitle} </a>
                         </td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
                     </tr>

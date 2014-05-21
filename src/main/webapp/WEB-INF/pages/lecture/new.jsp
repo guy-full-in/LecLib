@@ -7,10 +7,11 @@
 --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Новая лекция</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -32,9 +33,6 @@
 
         <c:url value="/j_spring_security_logout" var="logoutUrl"/>
         <form action="${logoutUrl}" method="post" id="logoutForm">
-            <input type="hidden"
-                   name="${_csrf.parameterName}"
-                   value="${_csrf.token}"/>
         </form>
 
         <c:url value="/lecture/${lecture.id}/delete" var="deleteUrl"/>
@@ -80,7 +78,7 @@
             <label class="col-sm-1 control-label" for="category">Категория:</label>
             <div class="col-sm-3">
                 <form:select id="category" cssClass="form-control" path="category" items="${categories}" itemValue="id"
-                             itemLabel="title"/>
+                             itemLabel="title" title="title"/>
             </div>
         </div>
 
@@ -88,7 +86,7 @@
             <label class="col-sm-1 control-label" for="university">Университет:</label>
             <div class="col-sm-3">
                 <form:select id="university" cssClass="form-control" path="university" items="${universities}"
-                             itemValue="id" itemLabel="shortTitle"/>
+                             itemValue="id" itemLabel="shortTitle" title="fullTitle"/>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Создать</button>

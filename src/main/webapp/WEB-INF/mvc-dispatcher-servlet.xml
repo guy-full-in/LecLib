@@ -42,7 +42,6 @@
             <bean class="ru.kpfu.it.leclib.interceptor.LectureAuthorAccess"/>
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/lecture/*/comment/*/edit"/>
             <mvc:mapping path="/lecture/*/comment/*/delete"/>
             <bean class="ru.kpfu.it.leclib.interceptor.CommentAccess"/>
         </mvc:interceptor>
