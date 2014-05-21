@@ -64,19 +64,17 @@
     </div>
 </nav>
 <div class="contentDiv">
-    <h3>Результаты поиска:</h3>
-
     <c:choose>
         <c:when test="${empty lectures}">
-            По данному запросу ничего не найдено.
+            Ничего не найдено.
         </c:when>
         <c:otherwise>
+            <h3>${category}:</h3>
             <table id="lectures" class="table table-striped">
                 <thead class="table-header-group">
                 <tr>
                     <th>Название</th>
                     <th>Автор</th>
-                    <th>Категория</th>
                     <th>Университет</th>
                     <th>Дата последнего изменения</th>
                 </tr>
@@ -86,7 +84,6 @@
                     <tr>
                         <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
                         <td>${lecture.author.username}</td>
-                        <td>${lecture.category.title}</td>
                         <td>${lecture.university.shortTitle}</td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
                     </tr>

@@ -14,7 +14,7 @@ import java.util.List;
 public interface LectureRepository extends CrudRepository<Lecture, Long> {
     List<Lecture> findByTitleLikeIgnoreCase(String title);
 
-    List<Lecture> findByCategoryTitle(String title);
+    List<Lecture> findByCategoryId(Long id);
 
-    List<Lecture> findByUniversityShortTitle(String shortTitle);
+    List<Lecture> findByUniversityId(Long id);
 }

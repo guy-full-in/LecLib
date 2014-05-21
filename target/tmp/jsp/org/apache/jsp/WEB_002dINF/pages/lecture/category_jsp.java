@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class category_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -140,8 +140,6 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\r\n");
       out.write("</nav>\r\n");
       out.write("<div class=\"contentDiv\">\r\n");
-      out.write("    <h3>Результаты поиска:</h3>\r\n");
-      out.write("\r\n");
       out.write("    ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
@@ -156,7 +154,7 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</script>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
-      out.write("</html>\r\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -236,7 +234,7 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("            По данному запросу ничего не найдено.\r\n");
+        out.write("            Ничего не найдено.\r\n");
         out.write("        ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -263,12 +261,14 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
+        out.write("            <h3>");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write(":</h3>\r\n");
         out.write("            <table id=\"lectures\" class=\"table table-striped\">\r\n");
         out.write("                <thead class=\"table-header-group\">\r\n");
         out.write("                <tr>\r\n");
         out.write("                    <th>Название</th>\r\n");
         out.write("                    <th>Автор</th>\r\n");
-        out.write("                    <th>Категория</th>\r\n");
         out.write("                    <th>Университет</th>\r\n");
         out.write("                    <th>Дата последнего изменения</th>\r\n");
         out.write("                </tr>\r\n");
@@ -320,9 +320,6 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("</a></td>\r\n");
           out.write("                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.author.username}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\r\n");
-          out.write("                        <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
           out.write("                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.shortTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null));

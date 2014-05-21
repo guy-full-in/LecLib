@@ -11,10 +11,10 @@
 <html>
 <head>
     <title>Результаты поиска</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
 
@@ -64,20 +64,18 @@
     </div>
 </nav>
 <div class="contentDiv">
-    <h3>Результаты поиска:</h3>
-
     <c:choose>
         <c:when test="${empty lectures}">
-            По данному запросу ничего не найдено.
+            Ничего не найдено.
         </c:when>
         <c:otherwise>
+            <h3>${university}:</h3>
             <table id="lectures" class="table table-striped">
                 <thead class="table-header-group">
                 <tr>
                     <th>Название</th>
                     <th>Автор</th>
                     <th>Категория</th>
-                    <th>Университет</th>
                     <th>Дата последнего изменения</th>
                 </tr>
                 </thead>
@@ -87,7 +85,6 @@
                         <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
                         <td>${lecture.author.username}</td>
                         <td>${lecture.category.title}</td>
-                        <td>${lecture.university.shortTitle}</td>
                         <td><fmt:formatDate value="${lecture.updatedAt}" pattern="HH.mm dd.MM.yyyy"/></td>
                     </tr>
                 </c:forEach>

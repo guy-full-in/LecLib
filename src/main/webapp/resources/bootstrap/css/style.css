@@ -108,3 +108,7 @@
 
 .lecForm {
 }
+
+th {
+    cursor: pointer;
+}

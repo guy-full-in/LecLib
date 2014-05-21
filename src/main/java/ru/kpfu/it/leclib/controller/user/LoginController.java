@@ -18,11 +18,11 @@ public class LoginController {
                         @RequestParam(value = "error", required = false) String error,
                         @RequestParam(value = "logout", required = false) String logout) {
         if (error != null){
-            model.addAttribute("error", "Invalid username and password");
+            model.addAttribute("error", "Неверное сочетание логина и пароля");
         }
 
         if (logout != null){
-            model.addAttribute("msg", "You've been logged out successfully.");
+            model.addAttribute("msg", "Вы успешно вышли");
         }
 
         return "login";

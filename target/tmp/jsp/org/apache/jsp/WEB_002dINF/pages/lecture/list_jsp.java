@@ -81,6 +81,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title>Мои лекции</title>\r\n");
       out.write("    <meta charset=\"utf-8\">\r\n");
       out.write("    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>\r\n");
+      out.write("    <script type=\"text/javascript\" src=\"/js/jquery.tablesorter.min.js\"></script>\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"/css/bootstrap.css\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n");
       out.write("</head>\r\n");
@@ -152,41 +153,19 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("    <script>\r\n");
+      out.write("        $(document).ready(function () {\r\n");
+      out.write("                    $(\"#myLectures\").tablesorter();\r\n");
+      out.write("                }\r\n");
+      out.write("        );\r\n");
+      out.write("        $(document).ready(function () {\r\n");
+      out.write("                    $(\"#aveilableLectures\").tablesorter();\r\n");
+      out.write("                }\r\n");
+      out.write("        );\r\n");
+      out.write("\r\n");
+      out.write("    </script>\r\n");
       out.write("</div>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<script>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("    function loadByCategory(category) {\r\n");
-      out.write("        var url = \"/lecture?byCategory=\" + category;\r\n");
-      out.write("        loadLectures(category, url)\r\n");
-      out.write("    }\r\n");
-      out.write("\r\n");
-      out.write("    function loadByUniversity(university) {\r\n");
-      out.write("        var url = \"/lecture?byUniversity=\" + university;\r\n");
-      out.write("        loadLectures(university, url)\r\n");
-      out.write("    }\r\n");
-      out.write("\r\n");
-      out.write("    function loadLectures(filter, url) {\r\n");
-      out.write("        $.get(url, function (lectures) {\r\n");
-      out.write("            $('#lectures').html('');\r\n");
-      out.write("            if (lectures.length == 0) {\r\n");
-      out.write("                $('#lectures').append('Нет лекций, доступных Вам, по этому фильтру');\r\n");
-      out.write("            } else {\r\n");
-      out.write("                var html = '<h2>' + filter + ':</h2>' + '<table class=\"table table-striped\"><thead class=\"table-header-group\"><tr><td>Название</td><td>Автор</td><td>Категория</td><td>Университет</td><td>Дата последнего изменения</td></tr></thead><tbody class=\"table-row-group\">';\r\n");
-      out.write("                lectures.forEach(function (lecture) {\r\n");
-      out.write("                    var createdAt = new Date(lecture.createdAt);\r\n");
-      out.write("                    html += '<tr><td><a href= \"lecture/' + lecture.id + '\">' + lecture.title + '</a></td><td>' + lecture.author.username + '</td><td><a href=\"#\" onclick=\"loadByCategory(\\'' + lecture.category.title+ '\\');\">' + lecture.category.title+ '</a></td><td><a href=\"#\"onclick=\"loadByUniversity(\\'' + lecture.university.shortTitle + '\\')\">' + lecture.university.shortTitle + ' </a></td><td>' + createdAt + '</td></tr>';\r\n");
-      out.write("                });\r\n");
-      out.write("                html += '</tbody></table>';\r\n");
-      out.write("                $('#lectures').append(html);\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            $('#lectures').append('<a href=\"/\" class=\"btn btn-primary\">Вернуться назад</a>');\r\n");
-      out.write("        });\r\n");
-      out.write("    }\r\n");
-      out.write("</script>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
@@ -269,7 +248,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("            У вас нет написанных лекций<br/><br/>\r\n");
+        out.write("            У вас нет написанных лекций.<br/><br/>\r\n");
         out.write("        ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -296,13 +275,13 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("            <table class=\"table table-striped\">\r\n");
+        out.write("            <table id=\"myLectures\" class=\"table table-striped tablesorter\">\r\n");
         out.write("                <thead class=\"table-header-group\">\r\n");
         out.write("                <tr>\r\n");
-        out.write("                    <td>Название</td>\r\n");
-        out.write("                    <td>Категория</td>\r\n");
-        out.write("                    <td>Университет</td>\r\n");
-        out.write("                    <td>Дата последнего изменения</td>\r\n");
+        out.write("                    <th>Название</th>\r\n");
+        out.write("                    <th>Категория</th>\r\n");
+        out.write("                    <th>Университет</th>\r\n");
+        out.write("                    <th>Дата последнего изменения</th>\r\n");
         out.write("                </tr>\r\n");
         out.write("                </thead>\r\n");
         out.write("                <tbody class=\"table-row-group\">\r\n");
@@ -350,17 +329,15 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</a></td>\r\n");
-          out.write("                        <td><a href=\"#\"\r\n");
-          out.write("                               onclick=\"loadByCategory('");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("');\"> ");
+          out.write("                        <td><a href=\"/category/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</a>\r\n");
           out.write("                        </td>\r\n");
-          out.write("                        <td><a href=\"#\"\r\n");
-          out.write("                               onclick=\"loadByUniversity('");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.shortTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("')\"> ");
+          out.write("                        <td><a href=\"/university/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.shortTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(" </a>\r\n");
           out.write("                        </td>\r\n");
@@ -473,7 +450,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("            У вас нет доступных лекций\r\n");
+        out.write("            У вас нет доступных лекций.\r\n");
         out.write("        ");
         int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -500,14 +477,14 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("            <table class=\"table table-striped\">\r\n");
+        out.write("            <table id=\"aveilableLectures\" class=\"table table-striped tablesorter\">\r\n");
         out.write("                <thead class=\"table-header-group\">\r\n");
         out.write("                <tr>\r\n");
-        out.write("                    <td>Название</td>\r\n");
-        out.write("                    <td>Автор</td>\r\n");
-        out.write("                    <td>Категория</td>\r\n");
-        out.write("                    <td>Университет</td>\r\n");
-        out.write("                    <td>Дата последнего изменения</td>\r\n");
+        out.write("                    <th>Название</th>\r\n");
+        out.write("                    <th>Автор</th>\r\n");
+        out.write("                    <th>Категория</th>\r\n");
+        out.write("                    <th>Университет</th>\r\n");
+        out.write("                    <th>Дата последнего изменения</th>\r\n");
         out.write("                </tr>\r\n");
         out.write("                </thead>\r\n");
         out.write("                <tbody class=\"table-row-group\">\r\n");
@@ -558,17 +535,15 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.author.username}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                        <td><a href=\"#\"\r\n");
-          out.write("                               onclick=\"loadByCategory('");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("');\"> ");
+          out.write("                        <td><a href=\"/cetegory/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</a>\r\n");
           out.write("                        </td>\r\n");
-          out.write("                        <td><a href=\"#\"\r\n");
-          out.write("                               onclick=\"loadByUniversity('");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.shortTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("')\"> ");
+          out.write("                        <td><a href=\"/university/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.university.shortTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(" </a>\r\n");
           out.write("                        </td>\r\n");
