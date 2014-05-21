@@ -27,8 +27,7 @@ public class FilterLectureController {
     UserRepository userRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public
-    @ResponseBody
+    public @ResponseBody
     List<Lecture> getByParam(@RequestParam(value = "byCategory", required = false) String category, @RequestParam(value = "byUniversity", required = false) String university) {
 
         List<Lecture> filterLectures;
@@ -44,6 +43,7 @@ public class FilterLectureController {
         List<Lecture> availableLectures = user.getAvailableLectures();
         availableLectures.addAll(user.getLectures());
         filterLectures.retainAll(availableLectures);
+
         return filterLectures;
     }
 

@@ -156,12 +156,14 @@
             } else {
                 var html = '<h2>' + filter + ':</h2>' + '<table class="table table-striped"><thead class="table-header-group"><tr><td>Название</td><td>Автор</td><td>Категория</td><td>Университет</td><td>Дата последнего изменения</td></tr></thead><tbody class="table-row-group">';
                 lectures.forEach(function (lecture) {
-                    var createdAt = lecture.createdAt;
+                    var createdAt = new Date(lecture.createdAt);
                     html += '<tr><td><a href= "lecture/' + lecture.id + '">' + lecture.title + '</a></td><td>' + lecture.author.username + '</td><td><a href="#" onclick="loadByCategory(\'' + lecture.category.title+ '\');">' + lecture.category.title+ '</a></td><td><a href="#"onclick="loadByUniversity(\'' + lecture.university.shortTitle + '\')">' + lecture.university.shortTitle + ' </a></td><td>' + createdAt + '</td></tr>';
                 });
                 html += '</tbody></table>';
                 $('#lectures').append(html);
             }
+
+            $('#lectures').append('<a href="/" class="btn btn-primary">Вернуться назад</a>');
         });
     }
 </script>

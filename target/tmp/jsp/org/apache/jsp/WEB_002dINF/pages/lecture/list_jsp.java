@@ -176,12 +176,14 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            } else {\r\n");
       out.write("                var html = '<h2>' + filter + ':</h2>' + '<table class=\"table table-striped\"><thead class=\"table-header-group\"><tr><td>Название</td><td>Автор</td><td>Категория</td><td>Университет</td><td>Дата последнего изменения</td></tr></thead><tbody class=\"table-row-group\">';\r\n");
       out.write("                lectures.forEach(function (lecture) {\r\n");
-      out.write("                    var createdAt = lecture.createdAt;\r\n");
+      out.write("                    var createdAt = new Date(lecture.createdAt);\r\n");
       out.write("                    html += '<tr><td><a href= \"lecture/' + lecture.id + '\">' + lecture.title + '</a></td><td>' + lecture.author.username + '</td><td><a href=\"#\" onclick=\"loadByCategory(\\'' + lecture.category.title+ '\\');\">' + lecture.category.title+ '</a></td><td><a href=\"#\"onclick=\"loadByUniversity(\\'' + lecture.university.shortTitle + '\\')\">' + lecture.university.shortTitle + ' </a></td><td>' + createdAt + '</td></tr>';\r\n");
       out.write("                });\r\n");
       out.write("                html += '</tbody></table>';\r\n");
       out.write("                $('#lectures').append(html);\r\n");
       out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            $('#lectures').append('<a href=\"/\" class=\"btn btn-primary\">Вернуться назад</a>');\r\n");
       out.write("        });\r\n");
       out.write("    }\r\n");
       out.write("</script>\r\n");
