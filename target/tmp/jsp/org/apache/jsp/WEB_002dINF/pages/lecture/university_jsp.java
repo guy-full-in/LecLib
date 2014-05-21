@@ -78,6 +78,8 @@ public final class university_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title>Результаты поиска</title>\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"/css/bootstrap.css\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n");
+      out.write("    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>\r\n");
+      out.write("    <script type=\"text/javascript\" src=\"/js/jquery.tablesorter.min.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\r\n");
@@ -143,6 +145,14 @@ public final class university_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\r\n");
       out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<script>\r\n");
+      out.write("    $(document).ready(function () {\r\n");
+      out.write("                $(\"#lectures\").tablesorter();\r\n");
+      out.write("            }\r\n");
+      out.write("    );\r\n");
+      out.write("</script>\r\n");
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -254,13 +264,13 @@ public final class university_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("            <h3>");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${university}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write(":</h3>\r\n");
-        out.write("            <table class=\"table table-striped\">\r\n");
+        out.write("            <table id=\"lectures\" class=\"table table-striped\">\r\n");
         out.write("                <thead class=\"table-header-group\">\r\n");
         out.write("                <tr>\r\n");
-        out.write("                    <td>Название</td>\r\n");
-        out.write("                    <td>Автор</td>\r\n");
-        out.write("                    <td>Категория</td>\r\n");
-        out.write("                    <td>Дата последнего изменения</td>\r\n");
+        out.write("                    <th>Название</th>\r\n");
+        out.write("                    <th>Автор</th>\r\n");
+        out.write("                    <th>Категория</th>\r\n");
+        out.write("                    <th>Дата последнего изменения</th>\r\n");
         out.write("                </tr>\r\n");
         out.write("                </thead>\r\n");
         out.write("                <tbody class=\"table-row-group\">\r\n");

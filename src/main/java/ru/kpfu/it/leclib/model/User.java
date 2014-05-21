@@ -20,17 +20,17 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Size(min = 4, message = "Name min size: 4")
+    @Size(min = 4, message = "Минимальный размер логина: 4")
     @Column(name = "username")
     private String username;
 
-    @NotEmpty(message = "Email does not be empty")
-    @Email(message = "This email does not exist")
+    @NotEmpty(message = "E-mail обязательное поле")
+    @Email(message = "Такой e-mail не существует")
     @Column(name = "email")
     private String email;
 
     @JsonIgnore
-    @Size(min = 6, message = "Password min size: 6")
+    @Size(min = 6, message = "Минимальный размер пароля: 6")
     @Column(name = "password")
     private String password;
 

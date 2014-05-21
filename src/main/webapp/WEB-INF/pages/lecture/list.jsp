@@ -117,7 +117,7 @@
                     <tr>
                         <td><a href="/lecture/<c:out value="${lecture.id}"/>">${lecture.title}</a></td>
                         <td>${lecture.author.username}</td>
-                        <td><a href="/cetegory/${lecture.category.id}"> ${lecture.category.title}</a>
+                        <td><a href="/category/${lecture.category.id}"> ${lecture.category.title}</a>
                         </td>
                         <td><a href="/university/${lecture.university.id}"> ${lecture.university.shortTitle} </a>
                         </td>

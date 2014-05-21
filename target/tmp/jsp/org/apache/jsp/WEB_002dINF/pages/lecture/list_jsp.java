@@ -535,7 +535,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.author.username}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                        <td><a href=\"/cetegory/");
+          out.write("                        <td><a href=\"/category/");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lecture.category.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
